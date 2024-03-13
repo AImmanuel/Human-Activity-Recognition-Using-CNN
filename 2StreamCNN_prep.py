@@ -329,7 +329,7 @@ class OpticalFlowProcessor:
 if __name__ == "__main__":
     model_type=f"2StreamConv_Seq"   
     try:
-        dataset_folder = "E:/MscProject/mini_dataset"
+        dataset_folder = "E:/MscProject/UP-Fall"
         output_folder = f"../Outputs/2StreamConv_Seq/Unbalanced"
 
         processor = OpticalFlowProcessor(dataset_folder, output_folder)
