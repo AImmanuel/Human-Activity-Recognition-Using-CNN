@@ -35,12 +35,12 @@ class TemporalCNN(nn.Module):
         # Global average pooling
         self.global_avg_pool = nn.AdaptiveAvgPool3d(1)
 
-        # Fully connected layers
-        self.fc1 = nn.Linear(256, 128)
-        self.dropout1 = nn.Dropout(0.5)
-        self.fc2 = nn.Linear(128, 64)
-        self.dropout2 = nn.Dropout(0.5)
-        self.fc3 = nn.Linear(64, 2) 
+        #### Fully connected layers
+        #self.fc1 = nn.Linear(256, 128)
+        #self.dropout1 = nn.Dropout(0.5)
+        #self.fc2 = nn.Linear(128, 64)
+        #self.dropout2 = nn.Dropout(0.5)
+        #self.fc3 = nn.Linear(64, 2) 
 
     def forward(self, t):
         t = F.relu(self.bn1(self.conv1(t)))
@@ -52,14 +52,14 @@ class TemporalCNN(nn.Module):
         t = F.relu(self.bn4(self.conv4(t)))
         t = self.global_avg_pool(t)
         t = t.view(t.size(0), -1)
-        t = F.relu(self.fc1(t))
-        t = self.dropout1(t)
-        t = F.relu(self.fc2(t))
-        t = self.dropout2(t)
-        t = self.fc3(t)
+        ###
+        #t = F.relu(self.fc1(t))
+        #t = self.dropout1(t)
+        #t = F.relu(self.fc2(t))
+        #t = self.dropout2(t)
+        #t = self.fc3(t)
 
         return t
-
 
 class SpatialCNN(nn.Module):
     def __init__(self):
@@ -223,7 +223,6 @@ class OpticalFlowComputer:
         
         return resized_frame
 
-
 class NumpyWriter:
     def __init__(self, output_folder):
         self.output_folder = output_folder
@@ -235,7 +234,6 @@ class NumpyWriter:
         os.makedirs(directory, exist_ok=True)
         np.save(file_path, array)
         
-
 class OpticalFlowProcessor:
     def __init__(self, dataset_folder, output_folder, fps = 18):
         self.frame_loader = FrameLoader(dataset_folder)
@@ -346,10 +344,6 @@ class OpticalFlowProcessor:
                     for camera_folder in dir_handler.get_camera_folders(subject_folder, activity_folder, trial_folder):
                         print(f"Processing video: {camera_folder}")
                         self.process_video(os.path.join(subject_folder, activity_folder, trial_folder, camera_folder))
-
-
-
-
 
 
 
