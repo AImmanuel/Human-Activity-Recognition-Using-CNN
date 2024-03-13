@@ -81,11 +81,7 @@ class OpticalFlowComputer:
         
         prev_frame_masked = cv2.bitwise_and(prev_frame, prev_frame, mask=fgmask_prev)
         current_frame_masked = cv2.bitwise_and(current_frame, current_frame, mask=fgmask_curr)
-        
-        # concatenated_frames = cv2.hconcat([current_frame, current_frame_masked])
-        # cv2.imshow('Original vs Preprocessed Frame', concatenated_frames)
-        # cv2.waitKey(1)
-        
+          
         prev_frame = cv2.medianBlur(prev_frame_masked, 5)
         current_frame = cv2.medianBlur(current_frame_masked, 5)
         
@@ -95,16 +91,6 @@ class OpticalFlowComputer:
         flow = cv2.calcOpticalFlowFarneback(prev_blurred, curr_blurred, None, 0.5, 3, 15, 3, 5, 1.2, 0)
         u_component = flow[..., 0]
         v_component = flow[..., 1]
-
-        # Uncomment below to view optical flow as it runs
-        # magnitude, angle = cv2.cartToPolar(u_component, v_component, angleInDegrees=True)
-        # hsv = np.zeros((prev_frame.shape[0], prev_frame.shape[1], 3), dtype=np.uint8)
-        # hsv[..., 1] = 255
-        # hsv[..., 0] = angle * 180 / np.pi / 2
-        # hsv[..., 2] = cv2.normalize(magnitude, None, 0, 255, cv2.NORM_MINMAX)
-        # rgb = cv2.cvtColor(hsv, cv2.COLOR_HSV2BGR)
-        # cv2.imshow('Optical Flow', rgb)
-        # cv2.waitKey(1)
 
         #New Resize: 320x240
         resized_u = cv2.resize(u_component, (320, 240))
@@ -145,8 +131,8 @@ class NumpyWriter:
         self.output_folder = output_folder
         os.makedirs(output_folder, exist_ok=True)
         
-    def write_array(self, array, name):
-        file_path = os.path.join(self.output_folder, f"{name}.npy")
+    def write_array(self, array, name, folder):
+        file_path = os.path.join(self.output_folder, folder, f"{name}.npy")
         directory = os.path.dirname(file_path)
         os.makedirs(directory, exist_ok=True)
         np.save(file_path, array)
@@ -195,13 +181,8 @@ class OpticalFlowProcessor:
         time_str = f"{hours:02}_{minutes:02}_{seconds:02}.{ms:06}"
         return f"{date}T{time_str}"
     
-#OF
-    def process_video_OF(self, video_folder):
-        
+    def process_video_OF(self, video_folder, output_folder):
         frames = self.frame_loader.load_frames_from_video(video_folder)
-        #print(f"First frame timestamp for {video_folder}: {frames[0][0]}")
-        #print(f"Last frame timestamp for {video_folder}: {frames[-1][0]}")
-
         i = 0
         num_frames_in_window = int(self.fps)
         overlap_frames = int(self.overlap)
@@ -216,36 +197,25 @@ class OpticalFlowProcessor:
             optical_flows_u= []
             optical_flows_v = []
 
-            #canny_frames = []
-
             for j in range(i, window_end - 1):
                 try:
                     u_component, v_component = self.optical_flow_computer.compute_optical_flow(frames[j][1], frames[j + 1][1])
                     optical_flows_u.append(u_component)
                     optical_flows_v.append(v_component)
 
-                #    final_components = self.optical_flow_computer.compute_resize(frames[k + 1][1])
-                #    canny_frames.append(final_components)
-
                 except cv2.error as e:
                     print(f"[OF] Error processing frame {frames[j][0]} from video {video_folder}. Error: {e}")
-                    #print(f"[RAW] Error processing frame {frames[k][0]} from video {video_folder}. Error: {e}")
                     continue
-            # Commented out to test preprocess
+
             optical_flows_u_array = np.stack(optical_flows_u, axis = 0)
             optical_flows_v_array = np.stack(optical_flows_v, axis = 0)
             
             combined_optical_flow = np.stack([optical_flows_u_array, optical_flows_v_array], axis=-1)
-            #components_stacked = np.stack(canny_frames, axis=0)
             
             window_name_of = f"{video_folder}_{timestamp}"
-            #window_name_raw = f"{video_folder}_{timestamp}"
-
-            self.numpy_writer.write_array(combined_optical_flow, window_name_of)
-            #self.numpy_writer.write_array(components_stacked, window_name_raw)
+            self.numpy_writer.write_array(combined_optical_flow, window_name_of, output_folder)
 
             timestamp = OpticalFlowProcessor.increment_timestamp(timestamp)
-            #print(f"Incremented timestamp for {video_folder}: {timestamp}")
             next_increment_seconds = OpticalFlowProcessor.total_seconds_from_timestamp(timestamp)
 
             if last_frame_seconds - next_increment_seconds < 1.0:
@@ -253,62 +223,43 @@ class OpticalFlowProcessor:
 
             i += (num_frames_in_window - overlap_frames)
 
-#RAW[resize]
-    def process_video_RAW(self, video_folder):
-        frames_1 = self.frame_loader.load_frames_from_video(video_folder)
-        #print(f"First frame timestamp for {video_folder}: {frames[0][0]}")
-        #print(f"Last frame timestamp for {video_folder}: {frames[-1][0]}")
-
+    def process_video_RAW(self, video_folder, output_folder):
+        frames = self.frame_loader.load_frames_from_video(video_folder)
         l = 0
-        num_frames_in_window_1 = int(self.fps)
-        overlap_frames_1 = int(self.overlap)
+        num_frames_in_window = int(self.fps)
+        overlap_frames = int(self.overlap)
 
-        last_frame_time_1 = frames_1[-1][0]
-        last_frame_seconds_1 = OpticalFlowProcessor.total_seconds_from_timestamp(last_frame_time_1)
-        timestamp_1 = frames_1[l][0]
+        last_frame_time = frames[-1][0]
+        last_frame_seconds = OpticalFlowProcessor.total_seconds_from_timestamp(last_frame_time)
+        timestamp = frames[l][0]
 
-        while l < len(frames_1) - num_frames_in_window_1:
-            window_end_1 = min(l + num_frames_in_window_1, len(frames_1))
+        while l < len(frames) - num_frames_in_window:
+            window_end = min(l + num_frames_in_window, len(frames))
             
-        #    optical_flows_u= []
-        #    optical_flows_v = []
-
             canny_frames = []
 
-            for k in range(l, window_end_1 - 1):
+            for k in range(l, window_end - 1):
                 try:
-                    #u_component, v_component = self.optical_flow_computer.compute_optical_flow(frames[j][1], frames[j + 1][1])
-                    #optical_flows_u.append(u_component)
-                    #optical_flows_v.append(v_component)
-
-                    final_components = self.optical_flow_computer.compute_resize(frames_1[k + 1][1])
+                    final_components = self.optical_flow_computer.compute_resize(frames[k + 1][1])
                     canny_frames.append(final_components)
 
                 except cv2.error as e:
-                    #print(f"[OF] Error processing frame {frames[j][0]} from video {video_folder}. Error: {e}")
-                    print(f"[RAW] Error processing frame {frames_1[k][0]} from video {video_folder}. Error: {e}")
+                    print(f"[RAW] Error processing frame {frames[k][0]} from video {video_folder}. Error: {e}")
                     continue
-            # Commented out to test preprocess
-            #optical_flows_u_array = np.stack(optical_flows_u, axis = 0)
-            #optical_flows_v_array = np.stack(optical_flows_v, axis = 0)
-            
-            #combined_optical_flow = np.stack([optical_flows_u_array, optical_flows_v_array], axis=-1)
+        
             components_stacked = np.stack(canny_frames, axis=0)
             
-            #window_name_of = f"{video_folder}_{timestamp}"
-            window_name_raw = f"{video_folder}_{timestamp_1}"
+            window_name_raw = f"{video_folder}_{timestamp}"
 
-            #self.numpy_writer.write_array(combined_optical_flow, window_name_of)
-            self.numpy_writer.write_array(components_stacked, window_name_raw)
+            self.numpy_writer.write_array(components_stacked, window_name_raw, output_folder)
 
-            timestamp_1 = OpticalFlowProcessor.increment_timestamp(timestamp_1)
-            #print(f"Incremented timestamp for {video_folder}: {timestamp}")
-            next_increment_seconds = OpticalFlowProcessor.total_seconds_from_timestamp(timestamp_1)
+            timestamp = OpticalFlowProcessor.increment_timestamp(timestamp)
+            next_increment_seconds = OpticalFlowProcessor.total_seconds_from_timestamp(timestamp)
 
-            if last_frame_seconds_1 - next_increment_seconds < 1.0:
+            if last_frame_seconds - next_increment_seconds < 1.0:
                 break
 
-            l += (num_frames_in_window_1 - overlap_frames_1)
+            l += (num_frames_in_window - overlap_frames)
 
     def run(self):
         dir_handler = DatasetDirectoryHandler(self.frame_loader.dataset_folder)
@@ -319,7 +270,7 @@ class OpticalFlowProcessor:
                     for camera_folder in dir_handler.get_camera_folders(subject_folder, activity_folder, trial_folder):
                         print(f"Processing video [OF]: {camera_folder}")
                         start = timer()
-                        self.process_video_OF(os.path.join(subject_folder, activity_folder, trial_folder, camera_folder))
+                        self.process_video_OF(os.path.join(subject_folder, activity_folder, trial_folder, camera_folder), 'OF')
                         print("Time Taken: ", timer() - start)  
                         now = datetime.now()
                         current_time = now.strftime("%H:%M:%S")
@@ -327,7 +278,7 @@ class OpticalFlowProcessor:
 
                         print(f"Processing video [RAW]: {camera_folder}")
                         start = timer()
-                        self.process_video_RAW(os.path.join(subject_folder, activity_folder, trial_folder, camera_folder))
+                        self.process_video_RAW(os.path.join(subject_folder, activity_folder, trial_folder, camera_folder), 'RAW')
                         print("Time Taken: ", timer() - start)  
                         now = datetime.now()
                         current_time_1 = now.strftime("%H:%M:%S")
