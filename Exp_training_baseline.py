@@ -8,6 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score
 import matplotlib.pyplot as plt
 from dataset_prep_3d import OpticalFlow3DDataset
+from dataset_prep_2d import OpticalFlow2DDataset
 import numpy as np
 from timeit import default_timer as timer
 from datetime import datetime
@@ -120,7 +121,6 @@ class SequentialCNN(nn.Module):
         return output
     
 
-
 def compute_metrics(true_labels, predictions):
     tn, fp, fn, tp = confusion_matrix(true_labels, predictions).ravel()
     accuracy = accuracy_score(true_labels, predictions)
@@ -196,10 +196,7 @@ def train_model(dataloader_train, dataloader_val, num_epochs=50, learning_rate=0
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr = learning_rate)
-    
-    best_loss = float('inf')
-    epochs_no_improve = 0
-    
+     
     accuracies = []
     precisions = []
     recalls = []
@@ -296,15 +293,17 @@ if __name__ == "__main__":
         script_path = os.path.abspath(__file__)
          # Extract the file name from the path
         script_name = os.path.basename(script_path)
-        name_only=os.path.splitext(script_name)
-        model_folder=name_only[0]
+        name_only = os.path.splitext(script_name)
+        model_folder = name_only[0]
 
-        features_path = f'C:\[LINK]\{model_folder}'
-        batch_size=32
-        num_epochs=50
-        learning_rate=0.0001
+        features_path_OF = 'E:/MscProject/Outputs/2StreamConv_Seq/Unbalanced/OF'
+        features_path_RAW = 'E:/MscProject/Outputs/2StreamConv_Seq/Unbalanced/RAW'
 
-        str_model_type=f'{model_folder}_b{batch_size}e{num_epochs}L{learning_rate}'
+        batch_size = 32
+        num_epochs = 50
+        learning_rate = 0.0001
+
+        str_model_type = f'{model_folder}_b{batch_size}e{num_epochs}L{learning_rate}'
 
         if not os.path.exists(f'./Results/{model_folder}'):
             try:
@@ -313,25 +312,44 @@ if __name__ == "__main__":
             except OSError as e:
                 print(f"Error creating directory ./Results/{model_folder}: {e}")
 
-        log_path=f'./Results/{model_folder}/Trainlog.log'
-        print(f"Path identified: {features_path}")
+        #log_path=f'./Results/{model_folder}/Trainlog.log'
+        print(f"Path identified: {features_path_OF}")
+        print(f"Path identified: {features_path_RAW}")
         #logging_output(f"Path identified is {features_path} ",log_path)
+
         print(f"Processing: {str_model_type}")
         #logging_output(f"Processing: {str_model_type}",log_path)
 
         code_start=timer()
 
-        dataset = OpticalFlow3DDataset(features_path)
-        train_idx, test_idx = train_test_split(range(len(dataset)), test_size=0.2, random_state=42, stratify=dataset.labels)
-        train_idx, val_idx = train_test_split(train_idx, test_size=0.25, random_state=42, stratify=np.array(dataset.labels)[train_idx])
+        dataset_OF = OpticalFlow3DDataset(features_path_OF)
+        dataset_RAW = OpticalFlow2DDataset(features_path_RAW)
 
-        train_dataset = torch.utils.data.Subset(dataset, train_idx)
-        val_dataset = torch.utils.data.Subset(dataset, val_idx)
-        test_dataset = torch.utils.data.Subset(dataset, test_idx)
+#OF
+        train_idx_OF, test_idx_OF = train_test_split(range(len(dataset_OF)), test_size=0.2, random_state=42, stratify=dataset_OF.labels)
+        train_idx_OF, val_idx_OF = train_test_split(train_idx_OF, test_size=0.25, random_state=42, stratify=np.array(dataset_OF.labels)[train_idx_OF])
 
-        dataloader_train = DataLoader(train_dataset, batch_size=32, shuffle=True)
-        dataloader_val = DataLoader(val_dataset, batch_size=32, shuffle=False)
-        dataloader_test = DataLoader(test_dataset, batch_size=32, shuffle=False)
+        train_dataset_OF = torch.utils.data.Subset(dataset_OF, train_idx_OF)
+        val_dataset_OF = torch.utils.data.Subset(dataset_OF, val_idx_OF)
+        test_dataset_OF = torch.utils.data.Subset(dataset_OF, test_idx_OF)
+
+        dataloader_train_OF = DataLoader(train_dataset_OF, batch_size=32, shuffle=True)
+        dataloader_val_OF = DataLoader(val_dataset_OF, batch_size=32, shuffle=False)
+        dataloader_test_OF = DataLoader(test_dataset_OF, batch_size=32, shuffle=False)
+
+#RAW
+        train_idx_RAW, test_idx_RAW = train_test_split(range(len(dataset_RAW)), test_size=0.2, random_state=42, stratify=dataset_RAW.labels)
+        train_idx_RAW, val_idx_RAW = train_test_split(train_idx_RAW, test_size=0.25, random_state=42, stratify=np.array(dataset_RAW.labels)[train_idx_RAW])
+
+        train_dataset_RAW = torch.utils.data.Subset(dataset_RAW, train_idx_RAW)
+        val_dataset_RAW = torch.utils.data.Subset(dataset_RAW, val_idx_RAW)
+        test_dataset_RAW = torch.utils.data.Subset(dataset_RAW, test_idx_RAW)
+
+        dataloader_train_RAW = DataLoader(train_dataset_RAW, batch_size=32, shuffle=True)
+        dataloader_val_RAW = DataLoader(val_dataset_RAW, batch_size=32, shuffle=False)
+        dataloader_test_RAW = DataLoader(test_dataset_RAW, batch_size=32, shuffle=False)
+
+
 
         if torch.cuda.is_available() :
             print(f"Running on GPU")
