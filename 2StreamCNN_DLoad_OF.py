@@ -78,8 +78,8 @@ if __name__ == "__main__":
                         filename_label_dict[file] = label
                         
                     else:
-                        #print(f"No label found for {file}, deleting the file.")
-                        #os.remove(os.path.join(root, file))
+                        print(f"No label found for {file}, deleting the file.")
+                        os.remove(os.path.join(root, file))
                         print(f"No label found for {file}")
 
 
