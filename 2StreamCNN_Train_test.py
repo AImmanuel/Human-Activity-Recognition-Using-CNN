@@ -304,8 +304,11 @@ if __name__ == "__main__":
         model_folder = name_only[0]
 
         features_path_OF = "E:/MscProject/Outputs/2StreamConv_Seq/Balanced/OF"
-        features_path_RAW = 'E:/MscProject/Outputs/2StreamConv_Seq/Balanced/RAW'
+        test_path_OF = 'LINK_LINK_OF'
 
+        features_path_RAW = 'E:/MscProject/Outputs/2StreamConv_Seq/Balanced/RAW'
+        test_path_RAW = 'LINK_LINK_OF'
+    
         batch_size = 32
         num_epochs = 50
         learning_rate = 0.0001
@@ -329,28 +332,32 @@ if __name__ == "__main__":
 
         code_start=timer()
 
-        dataset_OF = OpticalFlow3DDataset(features_path_OF)
-        dataset_RAW = OpticalFlow2DDataset(features_path_RAW)
+        train_val_dataset_OF = OpticalFlow3DDataset(features_path_OF)
+        test_dataset_OF = OpticalFlow3DDataset(test_path_OF)
+
+        train_val_dataset_RAW = OpticalFlow3DDataset(features_path_RAW)
+        test_dataset_RAW = OpticalFlow3DDataset(test_path_RAW)
+
 
 #OF
-        train_idx_OF, test_idx_OF = train_test_split(range(len(dataset_OF)), test_size=0.2, random_state=42, stratify=dataset_OF.labels)
-        train_idx_OF, val_idx_OF = train_test_split(train_idx_OF, test_size=0.25, random_state=42, stratify=np.array(dataset_OF.labels)[train_idx_OF])
+        #train_idx_OF, test_idx_OF = train_test_split(range(len(train_val_dataset_OF)), test_size=0.2, random_state=42, stratify=train_val_dataset_OF.labels)
+        train_idx_OF, val_idx_OF = train_test_split(range(len(train_val_dataset_OF)), test_size=0.25, random_state=42, stratify=train_val_dataset_OF.labels)
 
-        train_dataset_OF = torch.utils.data.Subset(dataset_OF, train_idx_OF)
-        val_dataset_OF = torch.utils.data.Subset(dataset_OF, val_idx_OF)
-        test_dataset_OF = torch.utils.data.Subset(dataset_OF, test_idx_OF)
+        train_dataset_OF = torch.utils.data.Subset(train_val_dataset_OF, train_idx_OF)
+        val_dataset_OF = torch.utils.data.Subset(train_val_dataset_OF, val_idx_OF)
+        #test_dataset_OF = torch.utils.data.Subset(dataset_OF, test_idx_OF)
 
         dataloader_train_OF = DataLoader(train_dataset_OF, batch_size=32, shuffle=True)
         dataloader_val_OF = DataLoader(val_dataset_OF, batch_size=32, shuffle=False)
         dataloader_test_OF = DataLoader(test_dataset_OF, batch_size=32, shuffle=False)
 
 #RAW
-        train_idx_RAW, test_idx_RAW = train_test_split(range(len(dataset_RAW)), test_size=0.2, random_state=42, stratify=dataset_RAW.labels)
-        train_idx_RAW, val_idx_RAW = train_test_split(train_idx_RAW, test_size=0.25, random_state=42, stratify=np.array(dataset_RAW.labels)[train_idx_RAW])
+       #train_idx_RAW, test_idx_RAW = train_test_split(range(len(dataset_RAW)), test_size=0.2, random_state=42, stratify=dataset_RAW.labels)
+        train_idx_RAW, val_idx_RAW = train_test_split(range(len(train_val_dataset_RAW)), test_size=0.25, random_state=42, stratify=train_val_dataset_RAW.labels)
 
-        train_dataset_RAW = torch.utils.data.Subset(dataset_RAW, train_idx_RAW)
-        val_dataset_RAW = torch.utils.data.Subset(dataset_RAW, val_idx_RAW)
-        test_dataset_RAW = torch.utils.data.Subset(dataset_RAW, test_idx_RAW)
+        train_dataset_RAW = torch.utils.data.Subset(train_val_dataset_RAW, train_idx_RAW)
+        val_dataset_RAW = torch.utils.data.Subset(train_val_dataset_RAW, val_idx_RAW)
+        #test_dataset_RAW = torch.utils.data.Subset(dataset_RAW, test_idx_RAW)
 
         dataloader_train_RAW = DataLoader(train_dataset_RAW, batch_size=32, shuffle=True)
         dataloader_val_RAW = DataLoader(val_dataset_RAW, batch_size=32, shuffle=False)
