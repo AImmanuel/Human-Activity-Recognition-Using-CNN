@@ -335,8 +335,8 @@ if __name__ == "__main__":
         train_val_dataset_OF = OpticalFlow3DDataset(features_path_OF)
         test_dataset_OF = OpticalFlow3DDataset(test_path_OF)
 
-        train_val_dataset_RAW = OpticalFlow3DDataset(features_path_RAW)
-        test_dataset_RAW = OpticalFlow3DDataset(test_path_RAW)
+        train_val_dataset_RAW = OpticalFlow2DDataset(features_path_RAW)
+        test_dataset_RAW = OpticalFlow2DDataset(test_path_RAW)
 
 
 #OF
