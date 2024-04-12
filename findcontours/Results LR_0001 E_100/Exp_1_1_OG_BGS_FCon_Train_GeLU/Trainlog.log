@@ -1,0 +1,7 @@
+14:21:10 : Path identified is D:/MscProject/Repo/Outputs/Exp_1_1_OG_BGS_findcontours/Balanced and D:/MscProject/Repo/Outputs/Exp_1_1_OG_BGS_findcontours/Unbalanced 
+14:21:10 : Starting the processing of Exp_1_1_OG_BGS_FCon_Train_GeLU_b32e100L0.0001 
+14:21:51 : Path identified is D:/MscProject/Repo/Outputs/Exp_1_1_OG_BGS_findcontours/Balanced and D:/MscProject/Repo/Outputs/Exp_1_1_OG_BGS_findcontours/Unbalanced 
+14:21:51 : Starting the processing of Exp_1_1_OG_BGS_FCon_Train_GeLU_b32e50L0.0001 
+14:22:21 : Running on GPU 
+14:22:21 : Model is Exp_1_1_OG_BGS_FCon_Train_GeLU_b32e50L0.0001 
+14:22:37 : Epoch [1/50], Loss: 0.4062, Accuracy: 0.8789, Precision: 0.8920, Recall: 0.8622, Specificity: 0.8956, F1-Score: 0.8769 

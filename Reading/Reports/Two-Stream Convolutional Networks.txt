@@ -1,0 +1,13 @@
+Two-Stream Convolutional Networks for Action Recognition in Videos
+
+[Dataset] UCF101 https://www.crcv.ucf.edu/data/UCF101.php
+[Dataset] HMDB51 https://serre-lab.clps.brown.edu/resource/hmdb-a-large-human-motion-database/
+
+[GitHub] https://github.com/feichtenhofer/twostreamfusion (Official)
+[GitHub] https://github.com/jeffreyyihuang/two-stream-action-recognition
+[GitHub] https://github.com/bryanyzhu/two-stream-pytorch?tab=readme-ov-file
+[GitHub] https://github.com/tomar840/two-stream-fusion-for-action-recognition-in-videos
+[GitHub] https://github.com/mohammed-elkomy/two-stream-action-recognition (JupyterNB)
+
+[Link] https://paperswithcode.com/paper/two-stream-convolutional-networks-for-action
+[Blog] https://blog.qure.ai/notes/deep-learning-for-videos-action-recognition-review#sec-2
