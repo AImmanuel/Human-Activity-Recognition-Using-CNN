@@ -15,11 +15,10 @@ import os
 
 
 class SAM(nn.Module):
-    def __init__(self,  bias=False):
+    def __init__(self, bias=False):
         super(SAM, self).__init__()
         self.bias = bias
-
-        self.conv = nn.Conv3d(in_channels=2, out_channels=1, kernel_size=(3,3,3), padding=1, bias=self.bias)
+        self.conv = nn.Conv3d(in_channels=2, out_channels=1, kernel_size=7, stride=1, padding=3, dilation=1, bias=self.bias)
 
     def forward(self, x):
         max = torch.max(x,1)[0].unsqueeze(1)
@@ -29,6 +28,40 @@ class SAM(nn.Module):
         output = output * x
         return output
 
+class CAM(nn.Module):
+    def __init__(self, channels, r):
+        super(CAM, self).__init__()
+        self.channels = channels
+        self.r = r
+        self.linear_max = nn.Sequential(
+            nn.Linear(in_features=self.channels, out_features=self.channels//self.r, bias=True),
+            nn.ReLU(inplace=True),
+            nn.Linear(in_features=self.channels//self.r, out_features=self.channels, bias=True))
+
+    def forward(self, x):
+        max = F.adaptive_max_pool3d(x, output_size=1)
+        avg = F.adaptive_avg_pool3d(x, output_size=1)
+        b, c, _, _, _ = x.size()
+        linear_max = self.linear_max(max.view(b,c)).view(b, c, 1, 1, 1)
+        linear_avg = self.linear_max(avg.view(b,c)).view(b, c, 1, 1, 1)
+        output = linear_max + linear_avg
+        output = F.sigmoid(output) * x
+        return output
+
+class CBAM(nn.Module):
+    def __init__(self, channels, r):
+        super(CBAM, self).__init__()
+        self.channels = channels
+        self.r = r
+        self.sam = SAM(bias=False)
+        self.cam = CAM(channels=self.channels, r=self.r)
+
+    def forward(self, x):
+        output = self.cam(x)
+        output = self.sam(output)
+        return output + x
+
+
 
 class FallDetectionCNN(nn.Module):
     def __init__(self):
@@ -37,17 +70,16 @@ class FallDetectionCNN(nn.Module):
         # Convolutional layers
         self.conv1 = nn.Conv3d(1, 64, (3, 3, 3), padding=1)
         self.bn1 = nn.BatchNorm3d(64)
-        self.atn1 = SAM() 
+        self.atn1 = CBAM(64,r=2) 
         self.conv2 = nn.Conv3d(64, 128, (3, 3, 3), padding=1)
         self.bn2 = nn.BatchNorm3d(128)
-        self.atn2 = SAM() 
+        self.atn2 = CBAM(128,r=2) 
         self.conv3 = nn.Conv3d(128, 256, (3, 3, 3), padding=1)
         self.bn3 = nn.BatchNorm3d(256)
-        self.atn3 = SAM() 
+        self.atn3 = CBAM(256,r=2) 
         self.conv4 = nn.Conv3d(256, 256, (3, 3, 3), padding=1)
         self.bn4 = nn.BatchNorm3d(256)
-        self.atn4 = SAM() 
-
+        #self.atn4 = CBAM(256,r=2) 
 
         # Global average pooling
         self.global_avg_pool = nn.AdaptiveAvgPool3d(1)
@@ -69,7 +101,8 @@ class FallDetectionCNN(nn.Module):
         x = F.relu(self.atn3(self.bn3(self.conv3(x))))
         x = F.max_pool3d(x, 2)
 
-        x = F.relu(self.atn4(self.bn4(self.conv4(x))))
+        #x = F.relu(self.atn4(self.bn4(self.conv4(x))))
+        x = F.relu(self.bn4(self.conv4(x)))
         x = self.global_avg_pool(x)
 
         x = x.view(x.size(0), -1)
@@ -81,7 +114,6 @@ class FallDetectionCNN(nn.Module):
         x = self.fc3(x)
         return x
     
-
 
 
 
