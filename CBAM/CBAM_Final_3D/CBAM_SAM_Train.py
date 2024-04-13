@@ -46,7 +46,7 @@ class FallDetectionCNN(nn.Module):
         self.atn3 = SAM() 
         self.conv4 = nn.Conv3d(256, 256, (3, 3, 3), padding=1)
         self.bn4 = nn.BatchNorm3d(256)
-        self.atn4 = SAM() 
+        #self.atn4 = SAM() 
 
 
         # Global average pooling
@@ -69,7 +69,8 @@ class FallDetectionCNN(nn.Module):
         x = F.relu(self.atn3(self.bn3(self.conv3(x))))
         x = F.max_pool3d(x, 2)
 
-        x = F.relu(self.atn4(self.bn4(self.conv4(x))))
+        #x = F.relu(self.atn4(self.bn4(self.conv4(x))))
+        x = F.relu(self.bn4(self.conv4(x)))
         x = self.global_avg_pool(x)
 
         x = x.view(x.size(0), -1)
@@ -262,8 +263,8 @@ def evaluate_model(model, dataloader, criterion, device):
     return avg_loss, accuracy, precision, recall, specificity, f1, all_labels, all_preds
 
 if __name__ == "__main__": 
-    features_path = "C:/Users/ac22aci/Desktop/Clones/Balanced"
-    test_path = "C:/Users/ac22aci/Desktop/Clones/Unbalanced"
+    features_path = "C:/Users/ac22aci/Desktop/Clones/LSTM_Ashley/Balanced/OF"
+    test_path = "C:/Users/ac22aci/Desktop/Clones/LSTM_Ashley/Unbalanced/OF"
     
     train_val_dataset = OpticalFlow3DDataset(features_path)
     test_dataset = OpticalFlow3DDataset(test_path)

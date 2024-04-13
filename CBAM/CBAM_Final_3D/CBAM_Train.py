@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score
 import matplotlib.pyplot as plt
-from dataset_prep_2d import OpticalFlow2DDataset
+from dataset_prep_3d import OpticalFlow3DDataset
 import cv2
 import seaborn as sns
 import os
@@ -68,7 +68,7 @@ class FallDetectionCNN(nn.Module):
         super(FallDetectionCNN, self).__init__()
 
         # Convolutional layers
-        self.conv1 = nn.Conv3d(1, 64, (3, 3, 3), padding=1)
+        self.conv1 = nn.Conv3d(2, 64, (3, 3, 3), padding=1)
         self.bn1 = nn.BatchNorm3d(64)
         self.atn1 = CBAM(64,r=2) 
         self.conv2 = nn.Conv3d(64, 128, (3, 3, 3), padding=1)
@@ -294,11 +294,11 @@ def evaluate_model(model, dataloader, criterion, device):
     return avg_loss, accuracy, precision, recall, specificity, f1, all_labels, all_preds
 
 if __name__ == "__main__": 
-    features_path = "C:/Users/ac22aci/Desktop/Clones/Balanced"
-    test_path = "C:/Users/ac22aci/Desktop/Clones/Unbalanced"
+    features_path = "C:/Users/ac22aci/Desktop/Clones/LSTM_Ashley/Balanced/OF"
+    test_path = "C:/Users/ac22aci/Desktop/Clones/LSTM_Ashley/Unbalanced/OF"
     
-    train_val_dataset = OpticalFlow2DDataset(features_path)
-    test_dataset = OpticalFlow2DDataset(test_path)
+    train_val_dataset = OpticalFlow3DDataset(features_path)
+    test_dataset = OpticalFlow3DDataset(test_path)
     
     train_idx, val_idx = train_test_split(range(len(train_val_dataset)), test_size=0.25, random_state=42, stratify=train_val_dataset.labels)
 
