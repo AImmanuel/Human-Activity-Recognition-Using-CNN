@@ -34,13 +34,13 @@ def downsample_dataset(original_folder, output_folder):
 if __name__ == "__main__":
     model_type=f"Exp_3_1_Res_38x51"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
-    original_folder = f'../Outputs/{model_type}/Unbalanced'
-    output_folder = f'../Outputs/{model_type}/Balanced/'
-    with open(f'../Outputs/{model_type}/DS_log.log', 'a') as file:
-            file.write(f' Downsampling started for {original_folder} with ou in {output_folder} \n')
+    original_folder = "C:/Users/ac22aci/Desktop/Clones/Unbalanced"
+    output_folder = "C:/Users/ac22aci/Desktop/Clones/Balanced"
+    #with open(f'../Outputs/{model_type}/DS_log.log', 'a') as file:
+     #       file.write(f' Downsampling started for {original_folder} with ou in {output_folder} \n')
 
     print(f"file is {original_folder} and {output_folder}")
     downsample_dataset(original_folder, output_folder)
-    with open(f'../Outputs/{model_type}/DS_log.log', 'a') as file:
-        file.write(f' Downsampling Complete for {original_folder} with ou in {output_folder} \n')
+    #with open(f'../Outputs/{model_type}/DS_log.log', 'a') as file:
+     #   file.write(f' Downsampling Complete for {original_folder} with ou in {output_folder} \n')
 

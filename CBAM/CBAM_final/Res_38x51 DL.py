@@ -3,10 +3,10 @@ import numpy as np
 import pandas as pd
 if __name__ == "__main__":   
      
-    csv_file_path = './Features_1&0.5_Vision.csv'
+    csv_file_path = "C:/Users/ac22aci/Desktop/Clones/Features_1&0.5_Vision.csv"
     labels_df = pd.read_csv(csv_file_path, skiprows=1)
 
-    base_folder = '../Outputs/Exp_3_1_Res_38x51/Unbalanced'
+    base_folder = "C:/Users/ac22aci/Desktop/Clones/Unbalanced"
     print(f"============================================================ ")
     print(f"file is {base_folder}")
     filename_label_dict = {}
@@ -72,6 +72,6 @@ if __name__ == "__main__":
                 print(f"Label mismatch for {filename}: assigned {assigned_label}, original {original_label}")
                 
     print(f"**************************************************************** ")
-    with open('../Outputs/Exp_3_1_Res_38x51/loader_log.log', 'a') as file:
-                file.write(f' Process complete for {base_folder} \n')
+    #with open('../Outputs/Exp_3_1_Res_38x51/loader_log.log', 'a') as file:
+     #           file.write(f' Process complete for {base_folder} \n')
     

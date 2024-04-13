@@ -43,8 +43,8 @@ if __name__ == "__main__":
     #original_folder = f'../Outputs/{model_type}/Unbalanced'
     #output_folder = f'../Outputs/{model_type}/Balanced/'
 
-    original_folders = ["E:/MscProject/Outputs/2StreamConv_Seq/Unbalanced/OF"]
-    output_folders = ["E:/MscProject/Outputs/2StreamConv_Seq/Balanced/OF"]
+    original_folders = ["C:/Users/ac22aci/Desktop/Clones/Unbalanced"]
+    output_folders = ["C:/Users/ac22aci/Desktop/Clones/Balanced"]
     
     for original_folder, output_folder in zip(original_folders, output_folders):
 

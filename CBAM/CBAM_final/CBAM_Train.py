@@ -7,77 +7,84 @@ from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score
 import matplotlib.pyplot as plt
-from dataset_prep_3d import OpticalFlow3DDataset
+from dataset_prep_2d import OpticalFlow2DDataset
 import cv2
 import seaborn as sns
 import os
 
-#class FallDetectionCNN(nn.Module):
-    #def __init__(self):
-        #super(FallDetectionCNN, self).__init__()
 
-        # Convolutional layers
-        #self.conv1 = nn.Conv3d(2, 64, (3, 3, 3), padding=1)
-        #self.bn1 = nn.BatchNorm3d(64)
-        #self.conv2 = nn.Conv3d(64, 128, (3, 3, 3), padding=1)
-        #self.bn2 = nn.BatchNorm3d(128)
-        #self.conv3 = nn.Conv3d(128, 256, (3, 3, 3), padding=1)
-        #self.bn3 = nn.BatchNorm3d(256)
-        #self.conv4 = nn.Conv3d(256, 256, (3, 3, 3), padding=1)
-        #self.bn4 = nn.BatchNorm3d(256)
 
-        # Global average pooling
-        #self.global_avg_pool = nn.AdaptiveAvgPool3d(1)
-
-        # Fully connected layers
-        #self.fc1 = nn.Linear(256, 128)
-        #self.dropout1 = nn.Dropout(0.5)
-        #self.fc2 = nn.Linear(128, 64)
-        #self.dropout2 = nn.Dropout(0.5)
-        #self.fc3 = nn.Linear(64, 2) 
-
-    #def forward(self, x):
-        #x = F.relu(self.bn1(self.conv1(x)))
-        #x = F.max_pool3d(x, 2)
-        #x = F.relu(self.bn2(self.conv2(x)))
-        #x = F.max_pool3d(x, 2)
-        #x = F.relu(self.bn3(self.conv3(x)))
-        #x = F.max_pool3d(x, 2)
-        #x = F.relu(self.bn4(self.conv4(x)))
-        #x = self.global_avg_pool(x)
-        #x = x.view(x.size(0), -1)
-        #x = F.relu(self.fc1(x))
-        #x = self.dropout1(x)
-        #x = F.relu(self.fc2(x))
-        #x = self.dropout2(x)
-        #x = self.fc3(x)
-        #return x
-    
 class SAM(nn.Module):
-    def __init__(self, bias=False):
+    def __init__(self,  bias=False):
         super(SAM, self).__init__()
         self.bias = bias
-        self.conv = nn.Conv2d(in_channels=2, out_channels=1, kernel_size=7, stride=1, padding=3, dilation=1, bias=self.bias)
+
+        self.conv = nn.Conv3d(in_channels=2, out_channels=1, kernel_size=(3,3,3), padding=1, bias=self.bias)
 
     def forward(self, x):
-        max_val = torch.max(x, 1)[0].unsqueeze(1)
-        avg_val = torch.mean(x, 1).unsqueeze(1)
-        concat = torch.cat((max_val, avg_val), dim=1)
+        max = torch.max(x,1)[0].unsqueeze(1)
+        avg = torch.mean(x,1).unsqueeze(1)
+        concat = torch.cat((max,avg), dim=1)
         output = self.conv(concat)
-        output = torch.sigmoid(output) * x 
-        return output 
+        output = output * x
+        return output
 
-class CBAM(nn.Module):
-    def __init__(self, channels, r):
-        super(CBAM, self).__init__()
-        self.channels = channels
-        self.r = r
-        self.sam = SAM(bias=False)
+
+class FallDetectionCNN(nn.Module):
+    def __init__(self):
+        super(FallDetectionCNN, self).__init__()
+
+        # Convolutional layers
+        self.conv1 = nn.Conv3d(1, 64, (3, 3, 3), padding=1)
+        self.bn1 = nn.BatchNorm3d(64)
+        self.atn1 = SAM() 
+        self.conv2 = nn.Conv3d(64, 128, (3, 3, 3), padding=1)
+        self.bn2 = nn.BatchNorm3d(128)
+        self.atn2 = SAM() 
+        self.conv3 = nn.Conv3d(128, 256, (3, 3, 3), padding=1)
+        self.bn3 = nn.BatchNorm3d(256)
+        self.atn3 = SAM() 
+        self.conv4 = nn.Conv3d(256, 256, (3, 3, 3), padding=1)
+        self.bn4 = nn.BatchNorm3d(256)
+        self.atn4 = SAM() 
+
+
+        # Global average pooling
+        self.global_avg_pool = nn.AdaptiveAvgPool3d(1)
+
+        # Fully connected layers
+        self.fc1 = nn.Linear(256, 128)
+        self.dropout1 = nn.Dropout(0.5)
+        self.fc2 = nn.Linear(128, 64)
+        self.dropout2 = nn.Dropout(0.5)
+        self.fc3 = nn.Linear(64, 2) 
 
     def forward(self, x):
-        output = self.sam(x)
-        return output + x
+        x = F.relu(self.atn1(self.bn1(self.conv1(x))))
+        x = F.max_pool3d(x, 2)
+
+        x = F.relu(self.atn2(self.bn2(self.conv2(x))))
+        x = F.max_pool3d(x, 2)
+
+        x = F.relu(self.atn3(self.bn3(self.conv3(x))))
+        x = F.max_pool3d(x, 2)
+
+        x = F.relu(self.atn4(self.bn4(self.conv4(x))))
+        x = self.global_avg_pool(x)
+
+        x = x.view(x.size(0), -1)
+        x = F.relu(self.fc1(x))
+        x = self.dropout1(x)
+
+        x = F.relu(self.fc2(x))
+        x = self.dropout2(x)
+        x = self.fc3(x)
+        return x
     
+
+
+
+
 def compute_metrics(true_labels, predictions):
     tn, fp, fn, tp = confusion_matrix(true_labels, predictions).ravel()
     accuracy = accuracy_score(true_labels, predictions)
@@ -159,7 +166,7 @@ def plot_confusion_matrix(true_labels, predictions, classes):
     
 def train_model(dataloader_train, dataloader_val, num_epochs = 50, learning_rate = 0.00001, weight_decay = 1e-5):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = CBAM().to(device)
+    model = FallDetectionCNN().to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr = learning_rate, weight_decay = weight_decay)
     
@@ -255,11 +262,11 @@ def evaluate_model(model, dataloader, criterion, device):
     return avg_loss, accuracy, precision, recall, specificity, f1, all_labels, all_preds
 
 if __name__ == "__main__": 
-    features_path = 'D:/nparray_balanced_320x240'
-    test_path = 'D:/nparray_uv_320x240'
+    features_path = "C:/Users/ac22aci/Desktop/Clones/Balanced"
+    test_path = "C:/Users/ac22aci/Desktop/Clones/Unbalanced"
     
-    train_val_dataset = OpticalFlow3DDataset(features_path)
-    test_dataset = OpticalFlow3DDataset(test_path)
+    train_val_dataset = OpticalFlow2DDataset(features_path)
+    test_dataset = OpticalFlow2DDataset(test_path)
     
     train_idx, val_idx = train_test_split(range(len(train_val_dataset)), test_size=0.25, random_state=42, stratify=train_val_dataset.labels)
 
@@ -272,7 +279,7 @@ if __name__ == "__main__":
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
-    model = CBAM().to(device)
+    model = FallDetectionCNN().to(device)
     
     saved_model_path = 'fall_detection_model_3d.pth'
     
