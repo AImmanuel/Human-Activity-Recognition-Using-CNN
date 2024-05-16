@@ -234,10 +234,12 @@ class SpeicalPatchEmbed(nn.Module):
     """
     def __init__(self, img_size=(51,38), patch_size=16, in_chans=2, embed_dim=768):
         super().__init__()
-        img_size = to_2tuple(img_size)
+        #img_size = to_2tuple(img_size)
+        img_size = (img_size[0], img_size[1])
         patch_size = to_2tuple(patch_size)
         num_patches = (img_size[1] // patch_size[1]) * (img_size[0] // patch_size[0])
-        self.img_size = img_size
+        #self.img_size = img_size
+        self.img_size = (img_size[0], img_size[1])
         self.patch_size = patch_size
         self.num_patches = num_patches
         self.norm = nn.LayerNorm(embed_dim)
@@ -246,10 +248,9 @@ class SpeicalPatchEmbed(nn.Module):
     def forward(self, x):
         B, C, T, H, W = x.shape
         # FIXME look at relaxing size constraints
-        # assert H == self.img_size[0] and W == self.img_size[1], \
-        #     f"Input image size ({H}*{W}) doesn't match model ({self.img_size[0]}*{self.img_size[1]})."
+        assert H == self.img_size[0] and W == self.img_size[1], \
+             f"Input image size ({H}*{W}) doesn't match model ({self.img_size[0]}*{self.img_size[1]})."
         x = self.proj(x)
-        B, C, T, H, W = x.shape
         x = x.flatten(2).transpose(1, 2)
         x = self.norm(x)
         x = x.reshape(B, T, H, W, -1).permute(0, 4, 1, 2, 3).contiguous()
@@ -261,10 +262,11 @@ class PatchEmbed(nn.Module):
     """
     def __init__(self, img_size=(51,38), patch_size=16, in_chans=3, embed_dim=768, std=False):
         super().__init__()
-        img_size = to_2tuple(img_size)
+        #img_size = to_2tuple(img_size)
+        img_size = (img_size[0], img_size[1])
         patch_size = to_2tuple(patch_size)
         num_patches = (img_size[1] // patch_size[1]) * (img_size[0] // patch_size[0])
-        self.img_size = img_size
+        self.img_size = (img_size[0], img_size[1])
         self.patch_size = patch_size
         self.num_patches = num_patches
         self.norm = nn.LayerNorm(embed_dim)
@@ -445,8 +447,6 @@ def uniformer_base600():
 
 
 
-
-
 class SequentialCNN(nn.Module):
     def __init__(self):
         super(SequentialCNN, self).__init__()
@@ -527,7 +527,7 @@ def plot_confusion_matrix(true_labels, predictions, classes):
 
 def train_model(dataloader_train, dataloader_val, num_epochs = 50, learning_rate = 0.00001, weight_decay = 1e-5):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = Uniformer().to(device)
+    model = SequentialCNN().to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr = learning_rate, weight_decay = weight_decay)
       
