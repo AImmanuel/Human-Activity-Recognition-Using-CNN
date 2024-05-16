@@ -270,14 +270,15 @@ class Uniformer(nn.Module):
         self.num_features = self.embed_dim = embed_dim  # num_features for consistency with other models
         norm_layer = partial(nn.LayerNorm, eps=1e-6) 
         
-        self.patch_embed1 = SpeicalPatchEmbed(
-            img_size=img_size, patch_size=4, in_chans=in_chans, embed_dim=embed_dim[0])
-        self.patch_embed2 = PatchEmbed(
-            img_size=img_size // 4, patch_size=2, in_chans=embed_dim[0], embed_dim=embed_dim[1], std=std)
-        self.patch_embed3 = PatchEmbed(
-            img_size=img_size // 8, patch_size=2, in_chans=embed_dim[1], embed_dim=embed_dim[2], std=std)
-        self.patch_embed4 = PatchEmbed(
-            img_size=img_size // 16, patch_size=2, in_chans=embed_dim[2], embed_dim=embed_dim[3], std=std)
+        #self.patch_embed1 = SpeicalPatchEmbed(img_size=img_size, patch_size=4, in_chans=in_chans, embed_dim=embed_dim[0])
+        #self.patch_embed2 = PatchEmbed(img_size=img_size // 4, patch_size=2, in_chans=embed_dim[0], embed_dim=embed_dim[1], std=std)
+        #self.patch_embed3 = PatchEmbed(img_size=img_size // 8, patch_size=2, in_chans=embed_dim[1], embed_dim=embed_dim[2], std=std)
+        #self.patch_embed4 = PatchEmbed(img_size=img_size // 16, patch_size=2, in_chans=embed_dim[2], embed_dim=embed_dim[3], std=std)
+
+        self.patch_embed1 = SpecialPatchEmbed(img_size=img_size, patch_size=4, in_chans=in_chans, embed_dim=embed_dim[0])
+        self.patch_embed2 = PatchEmbed(img_size=(img_size[0] // 4, img_size[1] // 4), patch_size=2, in_chans=embed_dim[0], embed_dim=embed_dim[1], std=std)
+        self.patch_embed3 = PatchEmbed(img_size=(img_size[0] // 8, img_size[1] // 8), patch_size=2, in_chans=embed_dim[1], embed_dim=embed_dim[2], std=std)
+        self.patch_embed4 = PatchEmbed(img_size=(img_size[0] // 16, img_size[1] // 16), patch_size=2, in_chans=embed_dim[2], embed_dim=embed_dim[3], std=std)
 
         self.pos_drop = nn.Dropout(p=drop_rate)
         dpr = [x.item() for x in torch.linspace(0, drop_path_rate, sum(depth))]  # stochastic depth decay rule
@@ -575,8 +576,8 @@ if __name__ == "__main__":
         name_only = os.path.splitext(script_name)
         model_folder = name_only[0]
 
-        features_path_OF = "C:/Users/ac22aci/Source/Repos/Human-Activity-Recognition-Using-CNN/datat/Exp_6_2_BG+OF_Baseline_80_Split/Balanced/OF"
-        test_path_OF = "C:/Users/ac22aci/Source/Repos/Human-Activity-Recognition-Using-CNN/datat/Exp_6_2_BG+OF_Baseline_80_Split/Unbalanced/OF"
+        features_path_OF = "C:/Users/ac22aci/Desktop/Clone/BG+OF/Exp_6_2_BG+OF_Baseline_80_Split/Balanced/OF"
+        test_path_OF = "C:/Users/ac22aci/Desktop/Clone/BG+OF/Exp_6_2_BG+OF_Baseline_80_Split/Unbalanced/OF"
 
         batch_size = 32
         num_epochs = 50
@@ -618,7 +619,7 @@ if __name__ == "__main__":
     
         print(f"Model is {str_model_type}")
 
-        model = SequentialCNN().to(device)
+        model = Uniformer().to(device)
         
         model = train_model(dataloader_train_OF, dataloader_val_OF)
     
