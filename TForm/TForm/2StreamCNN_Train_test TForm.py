@@ -202,7 +202,7 @@ class SplitSABlock(nn.Module):
 class SpeicalPatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
-    def __init__(self, img_size=(51,38), patch_size=16, in_chans=3, embed_dim=768):
+    def __init__(self, img_size=(51,38), patch_size=16, in_chans=2, embed_dim=768):
         super().__init__()
         img_size = to_2tuple(img_size)
         patch_size = to_2tuple(patch_size)
@@ -261,7 +261,7 @@ class Uniformer(nn.Module):
     A PyTorch impl of : `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale`  -
         https://arxiv.org/abs/2010.11929
     """
-    def __init__(self, depth=[5, 8, 20, 7], num_classes=400, img_size=(51,38), in_chans=3, embed_dim=[64, 128, 320, 512],
+    def __init__(self, depth=[5, 8, 20, 7], num_classes=400, img_size=(51,38), in_chans=2, embed_dim=[64, 128, 320, 512],
                  head_dim=64, mlp_ratio=4., qkv_bias=True, qk_scale=None, representation_size=None,
                  drop_rate=0.3, attn_drop_rate=0., drop_path_rate=0., norm_layer=None, split=False, std=False):
         super().__init__()
@@ -275,7 +275,7 @@ class Uniformer(nn.Module):
         #self.patch_embed3 = PatchEmbed(img_size=img_size // 8, patch_size=2, in_chans=embed_dim[1], embed_dim=embed_dim[2], std=std)
         #self.patch_embed4 = PatchEmbed(img_size=img_size // 16, patch_size=2, in_chans=embed_dim[2], embed_dim=embed_dim[3], std=std)
 
-        self.patch_embed1 = SpecialPatchEmbed(img_size=img_size, patch_size=4, in_chans=in_chans, embed_dim=embed_dim[0])
+        self.patch_embed1 = SpeicalPatchEmbed(img_size=img_size, patch_size=4, in_chans=in_chans, embed_dim=embed_dim[0])
         self.patch_embed2 = PatchEmbed(img_size=(img_size[0] // 4, img_size[1] // 4), patch_size=2, in_chans=embed_dim[0], embed_dim=embed_dim[1], std=std)
         self.patch_embed3 = PatchEmbed(img_size=(img_size[0] // 8, img_size[1] // 8), patch_size=2, in_chans=embed_dim[1], embed_dim=embed_dim[2], std=std)
         self.patch_embed4 = PatchEmbed(img_size=(img_size[0] // 16, img_size[1] // 16), patch_size=2, in_chans=embed_dim[2], embed_dim=embed_dim[3], std=std)
