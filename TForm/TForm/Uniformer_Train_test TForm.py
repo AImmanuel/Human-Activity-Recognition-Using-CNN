@@ -577,12 +577,12 @@ if __name__ == "__main__":
         name_only = os.path.splitext(script_name)
         model_folder = name_only[0]
 
-        features_path_OF = "C:/Users/ac22aci/Desktop/Clone/BG+OF/Exp_6_2_BG+OF_Baseline_80_Split/Balanced/OF"
-        test_path_OF = "C:/Users/ac22aci/Desktop/Clone/BG+OF/Exp_6_2_BG+OF_Baseline_80_Split/Unbalanced/OF"
+        features_path_OF = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Balanced/OF"
+        test_path_OF = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Unbalanced/OF"
 
-        batch_size = 32
+        batch_size = 16         #16 32 48    ORG:32
         num_epochs = 50
-        learning_rate = 0.0001
+        learning_rate = 0.001  #0.001 0.0001 0.00001   org:0.0001
 
         str_model_type = f'{model_folder}_b{batch_size}e{num_epochs}L{learning_rate}'
 
