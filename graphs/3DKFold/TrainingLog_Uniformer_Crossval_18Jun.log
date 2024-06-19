@@ -1059,3 +1059,6 @@
 14:40:27 : F1-Score: 0.7942 ± 0.2992 
 14:40:27 : Training Loss: 0.3603 ± 0.4292 
 14:40:27 : Validation Loss: 0.4179 ± 0.5771 
+12:31:30 : Uniformer_Crossval_18Jun 
+12:32:27 : Loaded saved model. 
+12:34:40 : Test Loss: 0.1572, Test Accuracy: 0.9620, Test Precision: 0.1426, Test Recall: 0.9766, Test Specificity: 0.9619, Test F1-Score: 0.2488 
