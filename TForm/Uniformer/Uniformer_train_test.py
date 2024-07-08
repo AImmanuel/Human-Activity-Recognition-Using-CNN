@@ -202,7 +202,7 @@ class SplitSABlock(nn.Module):
 class SpeicalPatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
-    def __init__(self, img_size=(51,38), patch_size=16, in_chans=2, embed_dim=768):
+    def __init__(self, img_size=(51,38), patch_size=32, in_chans=2, embed_dim=768):   # ORG patch_size=16
         super().__init__()
         img_size = (img_size[0], img_size[1])
         patch_size = to_2tuple(patch_size)
@@ -229,7 +229,7 @@ class SpeicalPatchEmbed(nn.Module):
 class PatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
-    def __init__(self, img_size=(51,38), patch_size=16, in_chans=3, embed_dim=768, std=False):
+    def __init__(self, img_size=(51,38), patch_size=32, in_chans=3, embed_dim=768, std=False):     #ORG patch_size=16
         super().__init__()
         #img_size = to_2tuple(img_size)
         img_size = (img_size[0], img_size[1])
@@ -580,9 +580,9 @@ if __name__ == "__main__":
         features_path_OF = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Balanced/OF"
         test_path_OF = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Unbalanced/OF"
 
-        batch_size = 16         #16 32 48    ORG:32
+        batch_size = 32         #16 32 48    ORG:32
         num_epochs = 50
-        learning_rate = 0.001  #0.001 0.0001 0.00001   org:0.0001
+        learning_rate = 0.0001  #0.001 0.0001 0.00001   org:0.0001
 
         str_model_type = f'{model_folder}_b{batch_size}e{num_epochs}L{learning_rate}'
 
