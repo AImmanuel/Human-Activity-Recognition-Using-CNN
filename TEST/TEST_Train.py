@@ -146,13 +146,13 @@ class FallDetectionCNN(nn.Module):
         # Convolutional layers
         self.conv1 = nn.Conv3d(2, 64, (3, 3, 3), padding=1)
         self.bn1 = nn.BatchNorm3d(64)
-        self.atn1 = RMCSAM(64,r=2) 
+        self.atn1 = RMCSAM(gate_channels=64) 
         self.conv2 = nn.Conv3d(64, 128, (3, 3, 3), padding=1)
         self.bn2 = nn.BatchNorm3d(128)
-        self.atn2 = RMCSAM(128,r=2) 
+        self.atn2 = RMCSAM(gate_channels=128) 
         self.conv3 = nn.Conv3d(128, 256, (3, 3, 3), padding=1)
         self.bn3 = nn.BatchNorm3d(256)
-        self.atn3 = RMCSAM(256,r=2) 
+        self.atn3 = RMCSAM(gate_channels=256) 
         self.conv4 = nn.Conv3d(256, 256, (3, 3, 3), padding=1)
         self.bn4 = nn.BatchNorm3d(256)
         #self.atn4 = CBAM(256,r=2) 
@@ -370,8 +370,8 @@ def evaluate_model(model, dataloader, criterion, device):
     return avg_loss, accuracy, precision, recall, specificity, f1, all_labels, all_preds
 
 if __name__ == "__main__": 
-    features_path = "C:/Users/ac22aci/Desktop/Clones/LSTM_Ashley/Balanced/OF"
-    test_path = "C:/Users/ac22aci/Desktop/Clones/LSTM_Ashley/Unbalanced/OF"
+    features_path = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Balanced/OF"
+    test_path = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Unbalanced/OF"
     
     train_val_dataset = OpticalFlow3DDataset(features_path)
     test_dataset = OpticalFlow3DDataset(test_path)
