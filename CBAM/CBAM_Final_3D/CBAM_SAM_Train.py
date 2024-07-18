@@ -165,7 +165,7 @@ def plot_confusion_matrix(true_labels, predictions, classes):
     plt.title('Confusion Matrix')
     plt.show()
     
-def train_model(dataloader_train, dataloader_val, num_epochs = 50, learning_rate = 0.00001, weight_decay = 1e-5):
+def train_model(dataloader_train, dataloader_val, num_epochs = 50, learning_rate = 0.0001, weight_decay = 1e-5):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = FallDetectionCNN().to(device)
     criterion = nn.CrossEntropyLoss()
@@ -263,8 +263,8 @@ def evaluate_model(model, dataloader, criterion, device):
     return avg_loss, accuracy, precision, recall, specificity, f1, all_labels, all_preds
 
 if __name__ == "__main__": 
-    features_path = "C:/Users/ac22aci/Desktop/Clones/LSTM_Ashley/Balanced/OF"
-    test_path = "C:/Users/ac22aci/Desktop/Clones/LSTM_Ashley/Unbalanced/OF"
+    features_path = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Balanced/OF"
+    test_path = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Unbalanced/OF"
     
     train_val_dataset = OpticalFlow3DDataset(features_path)
     test_dataset = OpticalFlow3DDataset(test_path)
