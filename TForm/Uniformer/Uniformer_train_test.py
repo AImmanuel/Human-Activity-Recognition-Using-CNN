@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score
 import matplotlib.pyplot as plt
-from dataset_prep_3d import OpticalFlow3DDataset
+from dataset_prep_3d_noOF import OpticalFlow3DDataset
 import numpy as np
 from timeit import default_timer as timer
 from datetime import datetime
@@ -202,7 +202,7 @@ class SplitSABlock(nn.Module):
 class SpeicalPatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
-    def __init__(self, img_size=(51,38), patch_size=32, in_chans=2, embed_dim=768):   # ORG patch_size=16
+    def __init__(self, img_size=(306,228), patch_size=16, in_chans=2, embed_dim=768):   # ORG patch_size=16
         super().__init__()
         img_size = (img_size[0], img_size[1])
         patch_size = to_2tuple(patch_size)
@@ -229,7 +229,7 @@ class SpeicalPatchEmbed(nn.Module):
 class PatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
-    def __init__(self, img_size=(51,38), patch_size=32, in_chans=3, embed_dim=768, std=False):     #ORG patch_size=16
+    def __init__(self, img_size=(306,228), patch_size=16, in_chans=3, embed_dim=768, std=False):     #ORG patch_size=16
         super().__init__()
         #img_size = to_2tuple(img_size)
         img_size = (img_size[0], img_size[1])
@@ -262,7 +262,7 @@ class Uniformer(nn.Module):
     A PyTorch impl of : `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale`  -
         https://arxiv.org/abs/2010.11929
     """
-    def __init__(self, depth=[5, 8, 20, 7], num_classes=400, img_size=(51,38), in_chans=2, embed_dim=[64, 128, 320, 512],
+    def __init__(self, depth=[5, 8, 20, 7], num_classes=400, img_size=(306,228), in_chans=2, embed_dim=[64, 128, 320, 512],
                  head_dim=64, mlp_ratio=4., qkv_bias=True, qk_scale=None, representation_size=None,
                  drop_rate=0.3, attn_drop_rate=0., drop_path_rate=0., norm_layer=None, split=False, std=False):
         super().__init__()

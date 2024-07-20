@@ -25,11 +25,11 @@ class OpticalFlow3DDataset(Dataset):
         data = np.load(file_path, allow_pickle=True).item()
         if data['array'].ndim == 0:
             raise ValueError(f"Encountered zero-dimensional array in file: {file_path}")
-        grayscale_sequence = np.expand_dims(data['array'][..., 0], axis=-1)
-        optical_flow_sequence = data['array'][..., 1:3]  # Optical flow has 2 channels
-        
-        combined_sequence = np.concatenate([grayscale_sequence, optical_flow_sequence], axis=-1)
-        combined_sequence = np.transpose(combined_sequence, (3, 0, 1, 2))  # Channel first format
+        grayscale_sequence = np.expand_dims(data['array'][..., 0], axis=-1) 
+        #optical_flow_sequence = data['array'][..., 1:3]  # Optical flow has 2 channels
+
+        ###combined_sequence = np.concatenate([grayscale_sequence, optical_flow_sequence], axis=-1)
+        grayscale_sequence = np.transpose(grayscale_sequence, (3, 0, 1, 2))  # Channel first format
         
         label = int(data['label'])
         if label in range(1, 6):
@@ -37,4 +37,5 @@ class OpticalFlow3DDataset(Dataset):
         else:
             label = 0
         
-        return torch.tensor(combined_sequence, dtype=torch.float32), torch.tensor(label, dtype=torch.long)
+        ###return torch.tensor(combined_sequence, dtype=torch.float32), torch.tensor(label, dtype=torch.long)
+        return torch.tensor(grayscale_sequence, dtype=torch.float32), torch.tensor(label, dtype=torch.long)
