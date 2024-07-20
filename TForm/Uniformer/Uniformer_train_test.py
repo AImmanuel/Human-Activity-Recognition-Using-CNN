@@ -577,8 +577,8 @@ if __name__ == "__main__":
         name_only = os.path.splitext(script_name)
         model_folder = name_only[0]
 
-        features_path_OF = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Balanced/OF"
-        test_path_OF = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Unbalanced/OF"
+        features_path_OF = "C:/Users/ac22aci/Desktop/raw_228x306_bal"
+        test_path_OF = "C:/Users/ac22aci/Desktop/raw_228x306"
 
         batch_size = 32         #16 32 48    ORG:32
         num_epochs = 50
