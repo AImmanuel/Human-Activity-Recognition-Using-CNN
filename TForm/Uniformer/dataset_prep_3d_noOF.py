@@ -26,11 +26,11 @@ class OpticalFlow3DDataset(Dataset):
         if data['array'].ndim == 0:
             raise ValueError(f"Encountered zero-dimensional array in file: {file_path}")
         grayscale_sequence = np.expand_dims(data['array'], axis=0) 
-        print(grayscale_sequence[0])
         #optical_flow_sequence = data['array'][..., 1:3]  # Optical flow has 2 channels
 
         ###combined_sequence = np.concatenate([grayscale_sequence, optical_flow_sequence], axis=-1)
-        grayscale_sequence = np.transpose(grayscale_sequence, (3, 0, 1, 2))  # Channel first format
+        #grayscale_sequence = np.transpose(grayscale_sequence, (3, 0, 1, 2))  # Channel first format
+        grayscale_sequence = np.transpose(grayscale_sequence, (0, 1, 3, 2))  # Channel first format
         
         label = int(data['label'])
         if label in range(1, 6):
