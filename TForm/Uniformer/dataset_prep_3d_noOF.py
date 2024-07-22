@@ -25,7 +25,8 @@ class OpticalFlow3DDataset(Dataset):
         data = np.load(file_path, allow_pickle=True).item()
         if data['array'].ndim == 0:
             raise ValueError(f"Encountered zero-dimensional array in file: {file_path}")
-        grayscale_sequence = np.expand_dims(data['array'][..., 0], axis=-1) 
+        grayscale_sequence = np.expand_dims(data['array'], axis=0) 
+        print(grayscale_sequence[0])
         #optical_flow_sequence = data['array'][..., 1:3]  # Optical flow has 2 channels
 
         ###combined_sequence = np.concatenate([grayscale_sequence, optical_flow_sequence], axis=-1)
