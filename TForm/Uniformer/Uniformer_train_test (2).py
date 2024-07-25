@@ -202,7 +202,7 @@ class SplitSABlock(nn.Module):
 class SpeicalPatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
-    def __init__(self, img_size=(306,228), patch_size=16, in_chans=1, embed_dim=768):   # ORG patch_size=16 in_chans=2
+    def __init__(self, img_size=(51,38), patch_size=16, in_chans=1, embed_dim=768):   # ORG patch_size=16 in_chans=2
         super().__init__()
         img_size = (img_size[0], img_size[1])
         patch_size = to_2tuple(patch_size)
@@ -230,7 +230,7 @@ class SpeicalPatchEmbed(nn.Module):
 class PatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
-    def __init__(self, img_size=(306,228), patch_size=16, in_chans=1, embed_dim=768, std=False):     #ORG patch_size=16
+    def __init__(self, img_size=(51,38), patch_size=16, in_chans=1, embed_dim=768, std=False):     #ORG patch_size=16
         super().__init__()
         #img_size = to_2tuple(img_size)
         img_size = (img_size[0], img_size[1])
@@ -263,7 +263,7 @@ class Uniformer(nn.Module):
     A PyTorch impl of : `An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale`  -
         https://arxiv.org/abs/2010.11929
     """                                                                          #in_chans=2
-    def __init__(self, depth=[5, 8, 20, 7], num_classes=400, img_size=(306,228), in_chans=1, embed_dim=[64, 128, 320, 512],
+    def __init__(self, depth=[5, 8, 20, 7], num_classes=400, img_size=(51,38), in_chans=1, embed_dim=[64, 128, 320, 512],
                  head_dim=64, mlp_ratio=4., qkv_bias=True, qk_scale=None, representation_size=None,
                  drop_rate=0.3, attn_drop_rate=0., drop_path_rate=0., norm_layer=None, split=False, std=False):
         super().__init__()
@@ -578,8 +578,8 @@ if __name__ == "__main__":
         name_only = os.path.splitext(script_name)
         model_folder = name_only[0]
 
-        features_path_OF = "C:/Users/ac22aci/Desktop/raw_228x306_bal"
-        test_path_OF = "C:/Users/ac22aci/Desktop/raw_228x306"
+        features_path_OF = "C:/Users/ac22aci/Desktop/nparray_raw_38x51_bal"
+        test_path_OF = "C:/Users/ac22aci/Desktop/nparray_raw_38x51"
 
         batch_size = 32         #16 32 48    ORG:32
         num_epochs = 50
