@@ -106,9 +106,9 @@ class OpticalFlowComputer:
         # cv2.imshow('Optical Flow', rgb)
         # cv2.waitKey(1)
 
-        #New Resize: 320x240
-        resized_u = cv2.resize(u_component, (320, 240))
-        resized_v = cv2.resize(v_component, (320, 240))
+        #New Resize: (51x38) #old 320x240
+        resized_u = cv2.resize(u_component, (51, 38))
+        resized_v = cv2.resize(v_component, (51, 38))
         
         return resized_u, resized_v
     
@@ -135,8 +135,8 @@ class OpticalFlowComputer:
         upper = int(min(255,1.5*med_val))
         current_frame_masked = cv2.Canny(current_frame_masked, lower, upper)
         
-        #New Resize: 320x240
-        resized_frame = cv2.resize(current_frame_masked, (320, 240))
+        #New Resize: 51x38 old 320x240
+        resized_frame = cv2.resize(current_frame_masked, (51, 38))
         
         return resized_frame
 

@@ -34,7 +34,7 @@ def downsample_dataset(original_folder, output_folder, remove_original):
             os.remove(file_path)
         
 if __name__ == "__main__":
-    original_folder = 'D:/nparray_uv_320x240'
-    output_folder = 'D:/nparray_balanced_320x240'
+    original_folder = "C:/Users/ac22aci/Desktop/nparray_raw_38x51"
+    output_folder = "C:/Users/ac22aci/Desktop/nparray_raw_38x51_bal"
     
     downsample_dataset(original_folder, output_folder, remove_original = True)

@@ -17,13 +17,10 @@ import re
 import seaborn as sns
 import traceback
 
-
-########################################################
-
-
 from functools import partial
 from timm.models.layers import trunc_normal_, DropPath, to_2tuple
 
+########################################################
 
 def conv_3xnxn(inp, oup, kernel_size=3, stride=3, groups=1):
     return nn.Conv3d(inp, oup, (3, kernel_size, kernel_size), (2, stride, stride), (1, 0, 0), groups=groups)
@@ -202,7 +199,7 @@ class SplitSABlock(nn.Module):
 class SpeicalPatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
-    def __init__(self, img_size=(51,38), patch_size=32, in_chans=2, embed_dim=768):   # ORG patch_size=16
+    def __init__(self, img_size=(51,38), patch_size=16, in_chans=2, embed_dim=768):
         super().__init__()
         img_size = (img_size[0], img_size[1])
         patch_size = to_2tuple(patch_size)
@@ -229,7 +226,7 @@ class SpeicalPatchEmbed(nn.Module):
 class PatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
-    def __init__(self, img_size=(51,38), patch_size=32, in_chans=3, embed_dim=768, std=False):     #ORG patch_size=16
+    def __init__(self, img_size=(51,38), patch_size=16, in_chans=2, embed_dim=768, std=False):
         super().__init__()
         #img_size = to_2tuple(img_size)
         img_size = (img_size[0], img_size[1])
@@ -410,6 +407,7 @@ def uniformer_base600():
     return Uniformer(
         depth=[5, 8, 20, 7], embed_dim=[64, 128, 320, 512], 
         head_dim=64, drop_rate=0.3, num_classes=600)
+
 
 
 #########################################################
