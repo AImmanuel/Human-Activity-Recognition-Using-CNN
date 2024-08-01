@@ -67,7 +67,7 @@ class SpatialCNN(nn.Module):
         super(SpatialCNN, self).__init__()
 
         # Convolutional layers
-        self.conv1_1 = nn.Conv3d(2, 64, (3, 3, 3), padding=1)
+        self.conv1_1 = nn.Conv3d(3, 64, (3, 3, 3), padding=1)
         self.bn1_1 = nn.BatchNorm3d(64)
         self.conv2_1 = nn.Conv3d(64, 128, (3, 3, 3), padding=1)
         self.bn2_1 = nn.BatchNorm3d(128)
@@ -104,22 +104,30 @@ class SpatialCNN(nn.Module):
 
         return s
     
+class AverageLayer(nn.Module):
+    def forward(self, inputs):
+        return torch.mean(torch.stack(inputs), dim=0)
 
 class SequentialCNN(nn.Module):
     def __init__(self):
         super(SequentialCNN, self).__init__()
         self.spatial =  SpatialCNN()
         self.temporal = TemporalCNN() 
+        self.average_layer = AverageLayer()
+
 
     def forward(self, combined_optical_flow, components_stacked):
-        temporal_features = self.temporal(combined_optical_flow)
+        #temporal_features = self.temporal(combined_optical_flow)
 
-        x = torch.concat(components_stacked, temporal_features)
-        #x = torch.cat(components_stacked + [temporal_features], dim=1)
+        #x = torch.concat(components_stacked, temporal_features)
+        ##x = torch.cat(components_stacked + [temporal_features], dim=1)
 
-        output = self.spatial(x)
-
-        return output
+        #output = self.spatial(x)
+        #return output
+        temporal_output = self.temporal(combined_optical_flow)
+        spatial_output = self.spatial(temporal_output)
+        averaged_output = self.average_layer([temporal_output, spatial_output])
+        return averaged_output
     
 
 def compute_metrics(true_labels, predictions):
@@ -303,11 +311,11 @@ if __name__ == "__main__":
         name_only = os.path.splitext(script_name)
         model_folder = name_only[0]
 
-        features_path_OF = "E:/MscProject/Outputs/2StreamConv_Seq/Balanced/OF"
-        test_path_OF = 'LINK_LINK_OF'
+        features_path_OF = "C:/Users/ac22aci/Desktop/nparray_balanced"
+        test_path_OF = "C:/Users/ac22aci/Desktop/nparray_uv"
 
-        features_path_RAW = 'E:/MscProject/Outputs/2StreamConv_Seq/Balanced/RAW'
-        test_path_RAW = 'LINK_LINK_OF'
+        features_path_RAW = "C:/Users/ac22aci/Desktop/2StreamConv_Seq_bal"
+        test_path_RAW = "C:/Users/ac22aci/Desktop/2StreamConv_Seq"
     
         batch_size = 32
         num_epochs = 50
