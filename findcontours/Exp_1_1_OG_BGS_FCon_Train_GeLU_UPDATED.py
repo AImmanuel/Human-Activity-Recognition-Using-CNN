@@ -263,8 +263,8 @@ if __name__ == "__main__":
         name_only=os.path.splitext(script_name)
         model_folder=name_only[0]
 
-        features_path = f"E:/MscProject/Repo/Outputs/Exp_1_1_OG_BGS_findcontours/Balanced"
-        test_path = f"E:/MscProject/Repo/Outputs/Exp_1_1_OG_BGS_findcontours/Unbalanced"
+        features_path = "C:/Users/ac22aci/Desktop/nparray_uv"
+        test_path = "C:/Users/ac22aci/Desktop/nparray_balanced"
         batch_size=32
         num_epochs=50
         learning_rate=0.0001 #org 0.0001
