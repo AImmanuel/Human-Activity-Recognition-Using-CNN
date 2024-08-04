@@ -18,7 +18,7 @@ import seaborn as sns
 import traceback
 
 
-class TemporalCNN(nn.Module):
+class TemporalCNN(nn.Module): ##SPATIAL??? 
     def __init__(self):
         super(TemporalCNN, self).__init__()
 
