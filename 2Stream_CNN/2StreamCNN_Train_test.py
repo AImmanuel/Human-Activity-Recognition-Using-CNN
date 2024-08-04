@@ -37,11 +37,11 @@ class TemporalCNN(nn.Module):
         self.global_avg_pool = nn.AdaptiveAvgPool3d(1)
 
         #### Fully connected layers
-        #self.fc1 = nn.Linear(256, 128)
-        #self.dropout1 = nn.Dropout(0.5)
-        #self.fc2 = nn.Linear(128, 64)
-        #self.dropout2 = nn.Dropout(0.5)
-        #self.fc3 = nn.Linear(64, 2) 
+        self.fc1 = nn.Linear(256, 128)
+        self.dropout1 = nn.Dropout(0.5)
+        self.fc2 = nn.Linear(128, 64)
+        self.dropout2 = nn.Dropout(0.5)
+        self.fc3 = nn.Linear(64, 2) 
 
     def forward(self, t):
         t = F.relu(self.bn1(self.conv1(t)))
@@ -67,7 +67,7 @@ class SpatialCNN(nn.Module):
         super(SpatialCNN, self).__init__()
 
         # Convolutional layers
-        self.conv1_1 = nn.Conv3d(3, 64, (3, 3, 3), padding=1)
+        self.conv1_1 = nn.Conv3d(1, 64, (3, 3, 3), padding=1)
         self.bn1_1 = nn.BatchNorm3d(64)
         self.conv2_1 = nn.Conv3d(64, 128, (3, 3, 3), padding=1)
         self.bn2_1 = nn.BatchNorm3d(128)
@@ -125,7 +125,7 @@ class SequentialCNN(nn.Module):
         #output = self.spatial(x)
         #return output
         temporal_output = self.temporal(combined_optical_flow)
-        spatial_output = self.spatial(temporal_output)
+        spatial_output = self.spatial(components_stacked)
         averaged_output = self.average_layer([temporal_output, spatial_output])
         return averaged_output
     
@@ -314,8 +314,8 @@ if __name__ == "__main__":
         features_path_OF = "C:/Users/ac22aci/Desktop/nparray_balanced"
         test_path_OF = "C:/Users/ac22aci/Desktop/nparray_uv"
 
-        features_path_RAW = "C:/Users/ac22aci/Desktop/2StreamConv_Seq_bal"
-        test_path_RAW = "C:/Users/ac22aci/Desktop/2StreamConv_Seq"
+        features_path_RAW = "C:/Users/ac22aci/Desktop/2Stream_bal"
+        test_path_RAW = "C:/Users/ac22aci/Desktop/2Stream_Unbalanced"
     
         batch_size = 32
         num_epochs = 50

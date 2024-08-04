@@ -23,17 +23,17 @@ def backup_folder(source_folder, backup_folder):
 
 if __name__ == "__main__":   
      
-    csv_file_path = './Features_1&0.5_Vision.csv'
+    csv_file_path = 'C:/Users/ac22aci/Desktop/Features_1&0.5_Vision.csv'
     labels_df = pd.read_csv(csv_file_path, skiprows=1)
 
-    base_folder = '../Outputs/Exp_1_1_OG_BGS_Canny/Unbalanced'
+    base_folder = 'C:/Users/ac22aci/Desktop/2Stream_Unbalanced'
     
-    backup_folder= '../Outputs/Exp_1_1_OG_BGS_Canny/backup'
+    backup_folder= 'C:/Users/ac22aci/Desktop/2Stream_Unbalanced'
     print(f"============================================================ ")
     print(f"File: {base_folder}")
     filename_label_dict = {}
 
-    backup_folder(base_folder, backup_folder)
+    #backup_folder(base_folder, backup_folder)
 
     for root, dirs, files in os.walk(base_folder):
         for file in files:
