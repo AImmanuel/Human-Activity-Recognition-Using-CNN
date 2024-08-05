@@ -366,8 +366,8 @@ def logging_output(message, file_path='./def_log.txt'):
         print(f"Error logging to {file_path} : {e}")    
 
 if __name__ == "__main__": 
-    features_path = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Balanced/OF"
-    test_path = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Unbalanced/OF"
+    features_path = "C:/Users/ac22aci/Desktop/nparray_balanced"
+    test_path = "C:/Users/ac22aci/Desktop/nparray_uv"
     
     print("Enter experiment name:")
     x = input()
