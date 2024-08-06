@@ -26,9 +26,9 @@ if __name__ == "__main__":
     csv_file_path = 'C:/Users/ac22aci/Desktop/Features_1&0.5_Vision.csv'
     labels_df = pd.read_csv(csv_file_path, skiprows=1)
 
-    base_folder = 'C:/Users/ac22aci/Desktop/2Stream_Unbalanced'
+    base_folder = "C:/Users/ac22aci/Desktop/2StreamConv_Seq/Unbalanced"
     
-    backup_folder= 'C:/Users/ac22aci/Desktop/2Stream_Unbalanced'
+    #backup_folder= 'C:/Users/ac22aci/Desktop/2Stream_Unbalanced'
     print(f"============================================================ ")
     print(f"File: {base_folder}")
     filename_label_dict = {}

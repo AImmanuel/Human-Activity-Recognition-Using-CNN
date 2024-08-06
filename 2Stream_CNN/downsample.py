@@ -36,8 +36,8 @@ def downsample_dataset(original_folder, output_folder, remove_original):
             os.remove(file_path)
         
 if __name__ == "__main__":
-    original_folder = "C:/Users/ac22aci/Desktop/2Stream"
-    output_folder = "C:/Users/ac22aci/Desktop/2Stream_bal"
+    original_folder = "C:/Users/ac22aci/Desktop/2StreamConv_Seq/Unbalanced"
+    output_folder = "C:/Users/ac22aci/Desktop/2StreamConv_Seq/Balanced"
     
     
     downsample_dataset(original_folder, output_folder, remove_original = True)

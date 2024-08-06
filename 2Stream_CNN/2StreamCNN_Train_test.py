@@ -8,7 +8,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score
 import matplotlib.pyplot as plt
 from dataset_prep_3d import OpticalFlow3DDataset
-from dataset_prep_2d import OpticalFlow2DDataset
+from dataset_prep_3d_RGB import RGBDataset
+#from dataset_prep_2d import OpticalFlow2DDataset
 import numpy as np
 from timeit import default_timer as timer
 from datetime import datetime
@@ -67,7 +68,7 @@ class SpatialCNN(nn.Module):
         super(SpatialCNN, self).__init__()
 
         # Convolutional layers
-        self.conv1_1 = nn.Conv3d(1, 64, (3, 3, 3), padding=1)
+        self.conv1_1 = nn.Conv3d(3, 64, (3, 3, 3), padding=1)
         self.bn1_1 = nn.BatchNorm3d(64)
         self.conv2_1 = nn.Conv3d(64, 128, (3, 3, 3), padding=1)
         self.bn2_1 = nn.BatchNorm3d(128)
@@ -84,7 +85,7 @@ class SpatialCNN(nn.Module):
         self.dropout1_1 = nn.Dropout(0.5)
         self.fc2_1 = nn.Linear(128, 64)
         self.dropout2_1 = nn.Dropout(0.5)
-        self.fc3_1 = nn.Linear(64, 2) 
+        self.fc3_1 = nn.Linear(64, 3) 
 
     def forward(self, s):
         s = F.relu(self.bn1_1(self.conv1_1(s)))
@@ -314,8 +315,8 @@ if __name__ == "__main__":
         features_path_OF = "C:/Users/ac22aci/Desktop/nparray_balanced"
         test_path_OF = "C:/Users/ac22aci/Desktop/nparray_uv"
 
-        features_path_RAW = "C:/Users/ac22aci/Desktop/2Stream_bal"
-        test_path_RAW = "C:/Users/ac22aci/Desktop/2Stream_Unbalanced"
+        features_path_RAW = "C:/Users/ac22aci/Desktop/2StreamConv_Seq/Balanced"
+        test_path_RAW = "C:/Users/ac22aci/Desktop/2StreamConv_Seq/Unbalanced"
     
         batch_size = 32
         num_epochs = 50
@@ -343,8 +344,8 @@ if __name__ == "__main__":
         train_val_dataset_OF = OpticalFlow3DDataset(features_path_OF)
         test_dataset_OF = OpticalFlow3DDataset(test_path_OF)
 
-        train_val_dataset_RAW = OpticalFlow2DDataset(features_path_RAW)
-        test_dataset_RAW = OpticalFlow2DDataset(test_path_RAW)
+        train_val_dataset_RAW = RGBDataset(features_path_RAW)
+        test_dataset_RAW = RGBDataset(test_path_RAW)
 
 
 #OF
