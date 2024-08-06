@@ -18,7 +18,7 @@ import gc
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score, accuracy_score
-from dataset_prep_3d import OpticalFlow3DDataset
+from dataset_prep_3d_fcon import OpticalFlow3DDataset
 from timeit import default_timer as timer
 from datetime import datetime
 import csv
@@ -45,7 +45,7 @@ class FallDetectionCNN(nn.Module):
         super(FallDetectionCNN, self).__init__()
 
         # Convolutional layers
-        self.conv1 = nn.Conv3d(2, 64, (3, 3, 3), padding=1)
+        self.conv1 = nn.Conv3d(1, 64, (3, 3, 3), padding=1)
         self.bn1 = nn.BatchNorm3d(64)
         self.conv2 = nn.Conv3d(64, 128, (3, 3, 3), padding=1)
         self.bn2 = nn.BatchNorm3d(128)
@@ -367,8 +367,8 @@ def logging_output(message, file_path='./def_log.txt'):
 
 if __name__ == "__main__": 
     ## relu findcontours prep data
-    features_path = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Balanced/OF"
-    test_path = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Unbalanced/OF"
+    features_path = "C:/Users/ac22aci/Desktop/Exp_1_1_OG_BGS_findcontours/Balanced"
+    test_path = "C:/Users/ac22aci/Desktop/Exp_1_1_OG_BGS_findcontours/Unbalanced"
     
     print("Enter experiment name:")
     x = input()
@@ -385,7 +385,7 @@ if __name__ == "__main__":
     
     model = FallDetectionCNN().to(device)
     
-    saved_model_path = 'graphs/3DKFold/Models/best_model_ReLU_fcon.pth'
+    saved_model_path = 'graphs/3DKFold/Models/best_model_ReLUfcon.pth'
     
     if os.path.isfile(saved_model_path):
         model.load_state_dict(torch.load(saved_model_path, map_location=device))
