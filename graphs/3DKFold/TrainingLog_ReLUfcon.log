@@ -1,0 +1,1038 @@
+22:43:02 : ReLUfcon 
+22:43:28 : No saved model found. Training a new model. 
+22:43:28 : FOLD 0 
+22:43:28 : ---------------------------------- 
+22:45:50 : ReLUfcon 
+22:46:16 : No saved model found. Training a new model. 
+22:46:16 : FOLD 0 
+22:46:16 : ---------------------------------- 
+22:56:41 : ReLUfcon 
+22:57:07 : No saved model found. Training a new model. 
+22:57:07 : FOLD 0 
+22:57:07 : ---------------------------------- 
+22:58:17 : ReLUfcon 
+22:58:44 : No saved model found. Training a new model. 
+22:58:44 : FOLD 0 
+22:58:44 : ---------------------------------- 
+22:58:51 : Training Confusion for Epoch 1:
+[[ 969  231]
+ [ 116 1135]] 
+22:58:52 : Epoch [1/50], Loss: 0.3765, Accuracy: 0.9119, Precision: 0.8650, Recall: 0.9573, Specificity: 0.8735, F1-Score: 0.9088 
+22:58:58 : Training Confusion for Epoch 2:
+[[1097  103]
+ [ 103 1148]] 
+22:58:59 : Epoch [2/50], Loss: 0.2822, Accuracy: 0.9021, Precision: 0.8379, Recall: 0.9751, Specificity: 0.8404, F1-Score: 0.9013 
+22:59:05 : Training Confusion for Epoch 3:
+[[1087  113]
+ [  67 1184]] 
+22:59:06 : Epoch [3/50], Loss: 0.8641, Accuracy: 0.8760, Precision: 0.7904, Recall: 0.9929, Specificity: 0.7771, F1-Score: 0.8801 
+22:59:12 : Training Confusion for Epoch 4:
+[[1102   98]
+ [  65 1186]] 
+22:59:13 : Epoch [4/50], Loss: 0.2939, Accuracy: 0.9413, Precision: 0.9043, Recall: 0.9751, Specificity: 0.9127, F1-Score: 0.9384 
+22:59:19 : Training Confusion for Epoch 5:
+[[1121   79]
+ [  49 1202]] 
+22:59:20 : Epoch [5/50], Loss: 0.0606, Accuracy: 0.8287, Precision: 0.9835, Recall: 0.6370, Specificity: 0.9910, F1-Score: 0.7732 
+22:59:26 : Training Confusion for Epoch 6:
+[[1132   68]
+ [  67 1184]] 
+22:59:27 : Epoch [6/50], Loss: 0.0741, Accuracy: 0.8189, Precision: 0.9722, Recall: 0.6228, Specificity: 0.9849, F1-Score: 0.7592 
+22:59:34 : Training Confusion for Epoch 7:
+[[1134   66]
+ [  54 1197]] 
+22:59:34 : Epoch [7/50], Loss: 0.8869, Accuracy: 0.8271, Precision: 0.7273, Recall: 0.9964, Specificity: 0.6837, F1-Score: 0.8408 
+22:59:41 : Training Confusion for Epoch 8:
+[[1145   55]
+ [  60 1191]] 
+22:59:42 : Epoch [8/50], Loss: 0.8104, Accuracy: 0.9070, Precision: 0.8353, Recall: 0.9929, Specificity: 0.8343, F1-Score: 0.9073 
+22:59:48 : Training Confusion for Epoch 9:
+[[1150   50]
+ [  35 1216]] 
+22:59:49 : Epoch [9/50], Loss: 0.1481, Accuracy: 0.9266, Precision: 0.9403, Recall: 0.8968, Specificity: 0.9518, F1-Score: 0.9180 
+22:59:55 : Training Confusion for Epoch 10:
+[[1156   44]
+ [  41 1210]] 
+22:59:56 : Epoch [10/50], Loss: 0.0622, Accuracy: 0.9429, Precision: 0.9457, Recall: 0.9288, Specificity: 0.9548, F1-Score: 0.9372 
+23:00:02 : Training Confusion for Epoch 11:
+[[1160   40]
+ [  41 1210]] 
+23:00:03 : Epoch [11/50], Loss: 0.0827, Accuracy: 0.9462, Precision: 0.9247, Recall: 0.9609, Specificity: 0.9337, F1-Score: 0.9424 
+23:00:09 : Training Confusion for Epoch 12:
+[[1161   39]
+ [  40 1211]] 
+23:00:10 : Epoch [12/50], Loss: 0.3826, Accuracy: 0.9364, Precision: 0.9384, Recall: 0.9217, Specificity: 0.9488, F1-Score: 0.9300 
+23:00:16 : Training Confusion for Epoch 13:
+[[1175   25]
+ [  36 1215]] 
+23:00:17 : Epoch [13/50], Loss: 1.1440, Accuracy: 0.8222, Precision: 0.7216, Recall: 0.9964, Specificity: 0.6747, F1-Score: 0.8371 
+23:00:23 : Training Confusion for Epoch 14:
+[[1173   27]
+ [  33 1218]] 
+23:00:24 : Epoch [14/50], Loss: 0.2108, Accuracy: 0.9413, Precision: 0.9181, Recall: 0.9573, Specificity: 0.9277, F1-Score: 0.9373 
+23:00:30 : Training Confusion for Epoch 15:
+[[1173   27]
+ [  27 1224]] 
+23:00:31 : Epoch [15/50], Loss: 1.0936, Accuracy: 0.9201, Precision: 0.8602, Recall: 0.9858, Specificity: 0.8645, F1-Score: 0.9187 
+23:00:38 : Training Confusion for Epoch 16:
+[[1162   38]
+ [  30 1221]] 
+23:00:38 : Epoch [16/50], Loss: 0.2133, Accuracy: 0.9478, Precision: 0.9431, Recall: 0.9431, Specificity: 0.9518, F1-Score: 0.9431 
+23:00:45 : Training Confusion for Epoch 17:
+[[1177   23]
+ [  29 1222]] 
+23:00:46 : Epoch [17/50], Loss: 0.2883, Accuracy: 0.9299, Precision: 0.8766, Recall: 0.9858, Specificity: 0.8825, F1-Score: 0.9280 
+23:00:52 : Training Confusion for Epoch 18:
+[[1185   15]
+ [  19 1232]] 
+23:00:53 : Epoch [18/50], Loss: 0.1295, Accuracy: 0.9299, Precision: 0.8766, Recall: 0.9858, Specificity: 0.8825, F1-Score: 0.9280 
+23:00:59 : Training Confusion for Epoch 19:
+[[1180   20]
+ [  20 1231]] 
+23:01:00 : Epoch [19/50], Loss: 0.4285, Accuracy: 0.9086, Precision: 0.9121, Recall: 0.8861, Specificity: 0.9277, F1-Score: 0.8989 
+23:01:06 : Training Confusion for Epoch 20:
+[[1175   25]
+ [  23 1228]] 
+23:01:07 : Epoch [20/50], Loss: 0.0503, Accuracy: 0.9511, Precision: 0.9404, Recall: 0.9537, Specificity: 0.9488, F1-Score: 0.9470 
+23:01:13 : Training Confusion for Epoch 21:
+[[1183   17]
+ [  23 1228]] 
+23:01:15 : Epoch [21/50], Loss: 0.0041, Accuracy: 0.8989, Precision: 0.9700, Recall: 0.8043, Specificity: 0.9789, F1-Score: 0.8794 
+23:01:22 : Training Confusion for Epoch 22:
+[[1186   14]
+ [  30 1221]] 
+23:01:23 : Epoch [22/50], Loss: 0.0018, Accuracy: 0.7162, Precision: 0.9908, Recall: 0.3843, Specificity: 0.9970, F1-Score: 0.5538 
+23:01:30 : Training Confusion for Epoch 23:
+[[1187   13]
+ [  12 1239]] 
+23:01:31 : Epoch [23/50], Loss: 0.0144, Accuracy: 0.9364, Precision: 0.9515, Recall: 0.9075, Specificity: 0.9608, F1-Score: 0.9290 
+23:01:38 : Training Confusion for Epoch 24:
+[[1190   10]
+ [  16 1235]] 
+23:01:38 : Epoch [24/50], Loss: 0.3626, Accuracy: 0.9413, Precision: 0.9043, Recall: 0.9751, Specificity: 0.9127, F1-Score: 0.9384 
+23:01:45 : Training Confusion for Epoch 25:
+[[1199    1]
+ [   7 1244]] 
+23:01:45 : Epoch [25/50], Loss: 0.0430, Accuracy: 0.9494, Precision: 0.9252, Recall: 0.9680, Specificity: 0.9337, F1-Score: 0.9461 
+23:01:52 : Training Confusion for Epoch 26:
+[[1191    9]
+ [  16 1235]] 
+23:01:53 : Epoch [26/50], Loss: 0.0122, Accuracy: 0.8777, Precision: 0.9558, Recall: 0.7687, Specificity: 0.9699, F1-Score: 0.8521 
+23:01:59 : Training Confusion for Epoch 27:
+[[1181   19]
+ [  17 1234]] 
+23:02:00 : Epoch [27/50], Loss: 0.9962, Accuracy: 0.9380, Precision: 0.9091, Recall: 0.9609, Specificity: 0.9187, F1-Score: 0.9343 
+23:02:06 : Training Confusion for Epoch 28:
+[[1191    9]
+ [  24 1227]] 
+23:02:07 : Epoch [28/50], Loss: 0.0258, Accuracy: 0.9266, Precision: 0.9338, Recall: 0.9039, Specificity: 0.9458, F1-Score: 0.9186 
+23:02:13 : Training Confusion for Epoch 29:
+[[1196    4]
+ [  11 1240]] 
+23:02:14 : Epoch [29/50], Loss: 0.2358, Accuracy: 0.9429, Precision: 0.9184, Recall: 0.9609, Specificity: 0.9277, F1-Score: 0.9391 
+23:02:20 : Training Confusion for Epoch 30:
+[[1192    8]
+ [  10 1241]] 
+23:02:21 : Epoch [30/50], Loss: 0.1328, Accuracy: 0.9478, Precision: 0.9249, Recall: 0.9644, Specificity: 0.9337, F1-Score: 0.9443 
+23:02:27 : Training Confusion for Epoch 31:
+[[1191    9]
+ [  14 1237]] 
+23:02:28 : Epoch [31/50], Loss: 0.4095, Accuracy: 0.9250, Precision: 0.8660, Recall: 0.9893, Specificity: 0.8705, F1-Score: 0.9236 
+23:02:34 : Training Confusion for Epoch 32:
+[[1194    6]
+ [  10 1241]] 
+23:02:35 : Epoch [32/50], Loss: 0.0049, Accuracy: 0.9201, Precision: 0.9531, Recall: 0.8683, Specificity: 0.9639, F1-Score: 0.9088 
+23:02:42 : Training Confusion for Epoch 33:
+[[1196    4]
+ [   8 1243]] 
+23:02:42 : Epoch [33/50], Loss: 0.3849, Accuracy: 0.9331, Precision: 0.9054, Recall: 0.9537, Specificity: 0.9157, F1-Score: 0.9289 
+23:02:49 : Training Confusion for Epoch 34:
+[[1176   24]
+ [  29 1222]] 
+23:02:50 : Epoch [34/50], Loss: 0.4687, Accuracy: 0.9478, Precision: 0.9249, Recall: 0.9644, Specificity: 0.9337, F1-Score: 0.9443 
+23:02:56 : Training Confusion for Epoch 35:
+[[1191    9]
+ [  10 1241]] 
+23:02:57 : Epoch [35/50], Loss: 0.0599, Accuracy: 0.9445, Precision: 0.9158, Recall: 0.9680, Specificity: 0.9247, F1-Score: 0.9412 
+23:03:03 : Training Confusion for Epoch 36:
+[[1190   10]
+ [  12 1239]] 
+23:03:04 : Epoch [36/50], Loss: 0.0191, Accuracy: 0.9331, Precision: 0.9348, Recall: 0.9181, Specificity: 0.9458, F1-Score: 0.9264 
+23:03:10 : Training Confusion for Epoch 37:
+[[1195    5]
+ [  14 1237]] 
+23:03:11 : Epoch [37/50], Loss: 0.0662, Accuracy: 0.9250, Precision: 0.9066, Recall: 0.9324, Specificity: 0.9187, F1-Score: 0.9193 
+23:03:18 : Training Confusion for Epoch 38:
+[[1189   11]
+ [  15 1236]] 
+23:03:19 : Epoch [38/50], Loss: 0.9412, Accuracy: 0.9364, Precision: 0.8954, Recall: 0.9751, Specificity: 0.9036, F1-Score: 0.9336 
+23:03:25 : Training Confusion for Epoch 39:
+[[1195    5]
+ [  10 1241]] 
+23:03:26 : Epoch [39/50], Loss: 0.0129, Accuracy: 0.8842, Precision: 0.9565, Recall: 0.7829, Specificity: 0.9699, F1-Score: 0.8611 
+23:03:32 : Training Confusion for Epoch 40:
+[[1195    5]
+ [  12 1239]] 
+23:03:33 : Epoch [40/50], Loss: 0.2444, Accuracy: 0.9168, Precision: 0.8549, Recall: 0.9858, Specificity: 0.8584, F1-Score: 0.9157 
+23:03:39 : Training Confusion for Epoch 41:
+[[1190   10]
+ [  14 1237]] 
+23:03:40 : Epoch [41/50], Loss: 0.1891, Accuracy: 0.9266, Precision: 0.8831, Recall: 0.9680, Specificity: 0.8916, F1-Score: 0.9236 
+23:03:46 : Training Confusion for Epoch 42:
+[[1184   16]
+ [  20 1231]] 
+23:03:47 : Epoch [42/50], Loss: 0.0532, Accuracy: 0.9413, Precision: 0.9520, Recall: 0.9181, Specificity: 0.9608, F1-Score: 0.9348 
+23:04:11 : Training Confusion for Epoch 43:
+[[1197    3]
+ [   7 1244]] 
+23:04:12 : Epoch [43/50], Loss: 0.6509, Accuracy: 0.9413, Precision: 0.9097, Recall: 0.9680, Specificity: 0.9187, F1-Score: 0.9379 
+23:04:18 : Training Confusion for Epoch 44:
+[[1199    1]
+ [   5 1246]] 
+23:04:19 : Epoch [44/50], Loss: 0.0184, Accuracy: 0.9478, Precision: 0.9338, Recall: 0.9537, Specificity: 0.9428, F1-Score: 0.9437 
+23:04:25 : Training Confusion for Epoch 45:
+[[1196    4]
+ [  10 1241]] 
+23:04:26 : Epoch [45/50], Loss: 0.0040, Accuracy: 0.9331, Precision: 0.9255, Recall: 0.9288, Specificity: 0.9367, F1-Score: 0.9272 
+23:04:32 : Training Confusion for Epoch 46:
+[[1195    5]
+ [  11 1240]] 
+23:04:33 : Epoch [46/50], Loss: 1.2224, Accuracy: 0.8874, Precision: 0.8046, Recall: 0.9964, Specificity: 0.7952, F1-Score: 0.8903 
+23:04:39 : Training Confusion for Epoch 47:
+[[1189   11]
+ [  14 1237]] 
+23:04:40 : Epoch [47/50], Loss: 0.0126, Accuracy: 0.9299, Precision: 0.9508, Recall: 0.8932, Specificity: 0.9608, F1-Score: 0.9211 
+23:04:47 : Training Confusion for Epoch 48:
+[[1190   10]
+ [  14 1237]] 
+23:04:48 : Epoch [48/50], Loss: 0.0260, Accuracy: 0.9445, Precision: 0.9130, Recall: 0.9715, Specificity: 0.9217, F1-Score: 0.9414 
+23:04:54 : Training Confusion for Epoch 49:
+[[1197    3]
+ [   8 1243]] 
+23:04:55 : Epoch [49/50], Loss: 0.0213, Accuracy: 0.9511, Precision: 0.9435, Recall: 0.9502, Specificity: 0.9518, F1-Score: 0.9468 
+23:05:01 : Training Confusion for Epoch 50:
+[[1194    6]
+ [   7 1244]] 
+23:05:02 : Epoch [50/50], Loss: 0.0015, Accuracy: 0.8026, Precision: 0.9819, Recall: 0.5801, Specificity: 0.9910, F1-Score: 0.7293 
+23:05:04 : FOLD 1 
+23:05:04 : ---------------------------------- 
+23:05:11 : Training Confusion for Epoch 1:
+[[1019  207]
+ [ 142 1083]] 
+23:05:12 : Epoch [1/50], Loss: 0.0630, Accuracy: 0.9038, Precision: 0.9306, Recall: 0.8730, Specificity: 0.9346, F1-Score: 0.9008 
+23:05:18 : Training Confusion for Epoch 2:
+[[1113  113]
+ [  96 1129]] 
+23:05:19 : Epoch [2/50], Loss: 0.1233, Accuracy: 0.9380, Precision: 0.9113, Recall: 0.9707, Specificity: 0.9052, F1-Score: 0.9401 
+23:05:25 : Training Confusion for Epoch 3:
+[[1124  102]
+ [  80 1145]] 
+23:05:26 : Epoch [3/50], Loss: 0.1843, Accuracy: 0.9429, Precision: 0.9304, Recall: 0.9577, Specificity: 0.9281, F1-Score: 0.9438 
+23:05:32 : Training Confusion for Epoch 4:
+[[1141   85]
+ [  79 1146]] 
+23:05:33 : Epoch [4/50], Loss: 0.0085, Accuracy: 0.8157, Precision: 0.9755, Recall: 0.6482, Specificity: 0.9837, F1-Score: 0.7789 
+23:05:39 : Training Confusion for Epoch 5:
+[[1142   84]
+ [  64 1161]] 
+23:05:40 : Epoch [5/50], Loss: 0.2310, Accuracy: 0.9347, Precision: 0.9058, Recall: 0.9707, Specificity: 0.8987, F1-Score: 0.9371 
+23:05:46 : Training Confusion for Epoch 6:
+[[1165   61]
+ [  66 1159]] 
+23:05:47 : Epoch [6/50], Loss: 0.0087, Accuracy: 0.8059, Precision: 0.9700, Recall: 0.6319, Specificity: 0.9804, F1-Score: 0.7653 
+23:05:54 : Training Confusion for Epoch 7:
+[[1165   61]
+ [  65 1160]] 
+23:05:54 : Epoch [7/50], Loss: 0.0153, Accuracy: 0.9364, Precision: 0.9437, Recall: 0.9283, Specificity: 0.9444, F1-Score: 0.9360 
+23:06:01 : Training Confusion for Epoch 8:
+[[1175   51]
+ [  50 1175]] 
+23:06:02 : Epoch [8/50], Loss: 0.0056, Accuracy: 0.9168, Precision: 0.9638, Recall: 0.8664, Specificity: 0.9673, F1-Score: 0.9125 
+23:06:08 : Training Confusion for Epoch 9:
+[[1171   55]
+ [  47 1178]] 
+23:06:09 : Epoch [9/50], Loss: 0.0247, Accuracy: 0.9462, Precision: 0.9202, Recall: 0.9772, Specificity: 0.9150, F1-Score: 0.9479 
+23:06:15 : Training Confusion for Epoch 10:
+[[1184   42]
+ [  51 1174]] 
+23:06:16 : Epoch [10/50], Loss: 0.0081, Accuracy: 0.9331, Precision: 0.9130, Recall: 0.9577, Specificity: 0.9085, F1-Score: 0.9348 
+23:06:22 : Training Confusion for Epoch 11:
+[[1190   36]
+ [  41 1184]] 
+23:06:23 : Epoch [11/50], Loss: 0.5275, Accuracy: 0.9266, Precision: 0.8853, Recall: 0.9805, Specificity: 0.8725, F1-Score: 0.9304 
+23:06:29 : Training Confusion for Epoch 12:
+[[1191   35]
+ [  35 1190]] 
+23:06:30 : Epoch [12/50], Loss: 0.0073, Accuracy: 0.9478, Precision: 0.9365, Recall: 0.9609, Specificity: 0.9346, F1-Score: 0.9486 
+23:06:37 : Training Confusion for Epoch 13:
+[[1187   39]
+ [  36 1189]] 
+23:06:37 : Epoch [13/50], Loss: 0.0072, Accuracy: 0.9103, Precision: 0.9599, Recall: 0.8567, Specificity: 0.9641, F1-Score: 0.9053 
+23:06:44 : Training Confusion for Epoch 14:
+[[1204   22]
+ [  36 1189]] 
+23:06:45 : Epoch [14/50], Loss: 0.0196, Accuracy: 0.9445, Precision: 0.9417, Recall: 0.9479, Specificity: 0.9412, F1-Score: 0.9448 
+23:06:51 : Training Confusion for Epoch 15:
+[[1191   35]
+ [  33 1192]] 
+23:06:52 : Epoch [15/50], Loss: 0.0124, Accuracy: 0.9282, Precision: 0.9582, Recall: 0.8958, Specificity: 0.9608, F1-Score: 0.9259 
+23:06:58 : Training Confusion for Epoch 16:
+[[1204   22]
+ [  26 1199]] 
+23:06:59 : Epoch [16/50], Loss: 1.2971, Accuracy: 0.8369, Precision: 0.7568, Recall: 0.9935, Specificity: 0.6797, F1-Score: 0.8592 
+23:07:23 : Training Confusion for Epoch 17:
+[[1191   35]
+ [  25 1200]] 
+23:07:24 : Epoch [17/50], Loss: 0.0012, Accuracy: 0.9331, Precision: 0.9524, Recall: 0.9121, Specificity: 0.9542, F1-Score: 0.9318 
+23:07:30 : Training Confusion for Epoch 18:
+[[1210   16]
+ [  25 1200]] 
+23:07:31 : Epoch [18/50], Loss: 2.3387, Accuracy: 0.8075, Precision: 0.7224, Recall: 1.0000, Specificity: 0.6144, F1-Score: 0.8388 
+23:07:38 : Training Confusion for Epoch 19:
+[[1204   22]
+ [  23 1202]] 
+23:07:39 : Epoch [19/50], Loss: 0.0283, Accuracy: 0.9380, Precision: 0.9164, Recall: 0.9642, Specificity: 0.9118, F1-Score: 0.9397 
+23:07:45 : Training Confusion for Epoch 20:
+[[1205   21]
+ [  26 1199]] 
+23:07:46 : Epoch [20/50], Loss: 0.0564, Accuracy: 0.9347, Precision: 0.8985, Recall: 0.9805, Specificity: 0.8889, F1-Score: 0.9377 
+23:07:52 : Training Confusion for Epoch 21:
+[[1208   18]
+ [  26 1199]] 
+23:07:53 : Epoch [21/50], Loss: 0.0024, Accuracy: 0.9315, Precision: 0.9585, Recall: 0.9023, Specificity: 0.9608, F1-Score: 0.9295 
+23:07:59 : Training Confusion for Epoch 22:
+[[1212   14]
+ [  16 1209]] 
+23:08:00 : Epoch [22/50], Loss: 0.0005, Accuracy: 0.8010, Precision: 0.9602, Recall: 0.6287, Specificity: 0.9739, F1-Score: 0.7598 
+23:08:06 : Training Confusion for Epoch 23:
+[[1206   20]
+ [  32 1193]] 
+23:08:07 : Epoch [23/50], Loss: 0.0339, Accuracy: 0.9413, Precision: 0.9094, Recall: 0.9805, Specificity: 0.9020, F1-Score: 0.9436 
+23:08:13 : Training Confusion for Epoch 24:
+[[1210   16]
+ [  19 1206]] 
+23:08:14 : Epoch [24/50], Loss: 0.0039, Accuracy: 0.9413, Precision: 0.9274, Recall: 0.9577, Specificity: 0.9248, F1-Score: 0.9423 
+23:08:21 : Training Confusion for Epoch 25:
+[[1208   18]
+ [  28 1197]] 
+23:08:21 : Epoch [25/50], Loss: 0.1898, Accuracy: 0.9315, Precision: 0.9003, Recall: 0.9707, Specificity: 0.8922, F1-Score: 0.9342 
+23:08:28 : Training Confusion for Epoch 26:
+[[1217    9]
+ [  11 1214]] 
+23:08:28 : Epoch [26/50], Loss: 0.0010, Accuracy: 0.8369, Precision: 0.9726, Recall: 0.6938, Specificity: 0.9804, F1-Score: 0.8099 
+23:08:35 : Training Confusion for Epoch 27:
+[[1215   11]
+ [  12 1213]] 
+23:08:36 : Epoch [27/50], Loss: 0.0009, Accuracy: 0.7504, Precision: 0.9639, Recall: 0.5212, Specificity: 0.9804, F1-Score: 0.6765 
+23:08:42 : Training Confusion for Epoch 28:
+[[1217    9]
+ [  12 1213]] 
+23:08:43 : Epoch [28/50], Loss: 0.0000, Accuracy: 0.6003, Precision: 0.9697, Recall: 0.2085, Specificity: 0.9935, F1-Score: 0.3432 
+23:08:49 : Training Confusion for Epoch 29:
+[[1213   13]
+ [  13 1212]] 
+23:08:50 : Epoch [29/50], Loss: 0.0048, Accuracy: 0.9478, Precision: 0.9205, Recall: 0.9805, Specificity: 0.9150, F1-Score: 0.9495 
+23:08:56 : Training Confusion for Epoch 30:
+[[1218    8]
+ [  14 1211]] 
+23:08:57 : Epoch [30/50], Loss: 0.0152, Accuracy: 0.9380, Precision: 0.9381, Recall: 0.9381, Specificity: 0.9379, F1-Score: 0.9381 
+23:09:03 : Training Confusion for Epoch 31:
+[[1216   10]
+ [  14 1211]] 
+23:09:04 : Epoch [31/50], Loss: 0.8238, Accuracy: 0.9201, Precision: 0.8707, Recall: 0.9870, Specificity: 0.8529, F1-Score: 0.9252 
+23:09:10 : Training Confusion for Epoch 32:
+[[1213   13]
+ [  15 1210]] 
+23:09:11 : Epoch [32/50], Loss: 0.0022, Accuracy: 0.9347, Precision: 0.9435, Recall: 0.9251, Specificity: 0.9444, F1-Score: 0.9342 
+23:09:18 : Training Confusion for Epoch 33:
+[[1218    8]
+ [  12 1213]] 
+23:09:19 : Epoch [33/50], Loss: 0.0022, Accuracy: 0.9168, Precision: 0.9444, Recall: 0.8860, Specificity: 0.9477, F1-Score: 0.9143 
+23:09:25 : Training Confusion for Epoch 34:
+[[1219    7]
+ [  12 1213]] 
+23:09:26 : Epoch [34/50], Loss: 0.0029, Accuracy: 0.9266, Precision: 0.9645, Recall: 0.8860, Specificity: 0.9673, F1-Score: 0.9236 
+23:09:32 : Training Confusion for Epoch 35:
+[[1217    9]
+ [  11 1214]] 
+23:09:33 : Epoch [35/50], Loss: 1.2462, Accuracy: 0.8450, Precision: 0.7677, Recall: 0.9902, Specificity: 0.6993, F1-Score: 0.8649 
+23:09:39 : Training Confusion for Epoch 36:
+[[1217    9]
+ [  11 1214]] 
+23:09:40 : Epoch [36/50], Loss: 0.0306, Accuracy: 0.9462, Precision: 0.9308, Recall: 0.9642, Specificity: 0.9281, F1-Score: 0.9472 
+23:09:46 : Training Confusion for Epoch 37:
+[[1217    9]
+ [  15 1210]] 
+23:09:47 : Epoch [37/50], Loss: 0.0210, Accuracy: 0.8401, Precision: 0.9686, Recall: 0.7036, Specificity: 0.9771, F1-Score: 0.8151 
+23:10:10 : Training Confusion for Epoch 38:
+[[1221    5]
+ [  13 1212]] 
+23:10:11 : Epoch [38/50], Loss: 2.8619, Accuracy: 0.8581, Precision: 0.7821, Recall: 0.9935, Specificity: 0.7222, F1-Score: 0.8752 
+23:10:17 : Training Confusion for Epoch 39:
+[[1218    8]
+ [  13 1212]] 
+23:10:18 : Epoch [39/50], Loss: 0.0190, Accuracy: 0.9445, Precision: 0.9149, Recall: 0.9805, Specificity: 0.9085, F1-Score: 0.9465 
+23:10:25 : Training Confusion for Epoch 40:
+[[1223    3]
+ [   7 1218]] 
+23:10:26 : Epoch [40/50], Loss: 1.0095, Accuracy: 0.9429, Precision: 0.9198, Recall: 0.9707, Specificity: 0.9150, F1-Score: 0.9445 
+23:10:32 : Training Confusion for Epoch 41:
+[[1216   10]
+ [  16 1209]] 
+23:10:33 : Epoch [41/50], Loss: 0.4136, Accuracy: 0.9086, Precision: 0.8535, Recall: 0.9870, Specificity: 0.8301, F1-Score: 0.9154 
+23:10:39 : Training Confusion for Epoch 42:
+[[1218    8]
+ [   9 1216]] 
+23:10:40 : Epoch [42/50], Loss: 0.0038, Accuracy: 0.9413, Precision: 0.9119, Recall: 0.9772, Specificity: 0.9052, F1-Score: 0.9434 
+23:10:46 : Training Confusion for Epoch 43:
+[[1210   16]
+ [  19 1206]] 
+23:10:47 : Epoch [43/50], Loss: 0.0015, Accuracy: 0.9380, Precision: 0.9498, Recall: 0.9251, Specificity: 0.9510, F1-Score: 0.9373 
+23:10:53 : Training Confusion for Epoch 44:
+[[1218    8]
+ [  13 1212]] 
+23:10:54 : Epoch [44/50], Loss: 0.4848, Accuracy: 0.9347, Precision: 0.9406, Recall: 0.9283, Specificity: 0.9412, F1-Score: 0.9344 
+23:11:01 : Training Confusion for Epoch 45:
+[[1225    1]
+ [   4 1221]] 
+23:11:01 : Epoch [45/50], Loss: 0.0470, Accuracy: 0.9560, Precision: 0.9403, Recall: 0.9739, Specificity: 0.9379, F1-Score: 0.9568 
+23:11:08 : Training Confusion for Epoch 46:
+[[1224    2]
+ [   7 1218]] 
+23:11:09 : Epoch [46/50], Loss: 0.0035, Accuracy: 0.9250, Precision: 0.9579, Recall: 0.8893, Specificity: 0.9608, F1-Score: 0.9223 
+23:11:15 : Training Confusion for Epoch 47:
+[[1226    0]
+ [   4 1221]] 
+23:11:16 : Epoch [47/50], Loss: 0.0013, Accuracy: 0.9413, Precision: 0.9119, Recall: 0.9772, Specificity: 0.9052, F1-Score: 0.9434 
+23:11:22 : Training Confusion for Epoch 48:
+[[1220    6]
+ [   6 1219]] 
+23:11:23 : Epoch [48/50], Loss: 0.0059, Accuracy: 0.9413, Precision: 0.9385, Recall: 0.9446, Specificity: 0.9379, F1-Score: 0.9416 
+23:11:29 : Training Confusion for Epoch 49:
+[[1219    7]
+ [  15 1210]] 
+23:11:30 : Epoch [49/50], Loss: 1.0926, Accuracy: 0.9184, Precision: 0.8725, Recall: 0.9805, Specificity: 0.8562, F1-Score: 0.9233 
+23:11:36 : Training Confusion for Epoch 50:
+[[1209   17]
+ [  26 1199]] 
+23:11:37 : Epoch [50/50], Loss: 2.9343, Accuracy: 0.8238, Precision: 0.7409, Recall: 0.9967, Specificity: 0.6503, F1-Score: 0.8500 
+23:11:38 : FOLD 2 
+23:11:38 : ---------------------------------- 
+23:11:44 : Training Confusion for Epoch 1:
+[[1016  225]
+ [ 149 1061]] 
+23:11:45 : Epoch [1/50], Loss: 0.0118, Accuracy: 0.9184, Precision: 0.9024, Recall: 0.9472, Specificity: 0.8866, F1-Score: 0.9242 
+23:11:51 : Training Confusion for Epoch 2:
+[[1133  108]
+ [  80 1130]] 
+23:11:52 : Epoch [2/50], Loss: 0.0073, Accuracy: 0.7684, Precision: 0.9839, Recall: 0.5683, Specificity: 0.9897, F1-Score: 0.7205 
+23:11:59 : Training Confusion for Epoch 3:
+[[1132  109]
+ [  71 1139]] 
+23:11:59 : Epoch [3/50], Loss: 0.0014, Accuracy: 0.9217, Precision: 0.9757, Recall: 0.8727, Specificity: 0.9759, F1-Score: 0.9213 
+23:12:06 : Training Confusion for Epoch 4:
+[[1162   79]
+ [  74 1136]] 
+23:12:07 : Epoch [4/50], Loss: 0.0119, Accuracy: 0.8825, Precision: 0.8205, Recall: 0.9938, Specificity: 0.7595, F1-Score: 0.8989 
+23:12:13 : Training Confusion for Epoch 5:
+[[1150   91]
+ [  53 1157]] 
+23:12:14 : Epoch [5/50], Loss: 0.0009, Accuracy: 0.8989, Precision: 0.9745, Recall: 0.8292, Specificity: 0.9759, F1-Score: 0.8960 
+23:12:20 : Training Confusion for Epoch 6:
+[[1162   79]
+ [  60 1150]] 
+23:12:21 : Epoch [6/50], Loss: 0.0012, Accuracy: 0.9527, Precision: 0.9592, Recall: 0.9503, Specificity: 0.9553, F1-Score: 0.9548 
+23:12:27 : Training Confusion for Epoch 7:
+[[1185   56]
+ [  40 1170]] 
+23:12:28 : Epoch [7/50], Loss: 0.0029, Accuracy: 0.9478, Precision: 0.9708, Recall: 0.9286, Specificity: 0.9691, F1-Score: 0.9492 
+23:13:06 : Training Confusion for Epoch 8:
+[[1183   58]
+ [  46 1164]] 
+23:13:07 : Epoch [8/50], Loss: 0.0019, Accuracy: 0.9364, Precision: 0.9732, Recall: 0.9037, Specificity: 0.9725, F1-Score: 0.9372 
+23:13:13 : Training Confusion for Epoch 9:
+[[1195   46]
+ [  38 1172]] 
+23:13:14 : Epoch [9/50], Loss: 0.0010, Accuracy: 0.9380, Precision: 0.9671, Recall: 0.9130, Specificity: 0.9656, F1-Score: 0.9393 
+23:13:21 : Training Confusion for Epoch 10:
+[[1189   52]
+ [  29 1181]] 
+23:13:22 : Epoch [10/50], Loss: 0.0007, Accuracy: 0.9070, Precision: 0.9682, Recall: 0.8509, Specificity: 0.9691, F1-Score: 0.9058 
+23:13:29 : Training Confusion for Epoch 11:
+[[1196   45]
+ [  36 1174]] 
+23:13:30 : Epoch [11/50], Loss: 0.0082, Accuracy: 0.9445, Precision: 0.9138, Recall: 0.9876, Specificity: 0.8969, F1-Score: 0.9493 
+23:13:36 : Training Confusion for Epoch 12:
+[[1201   40]
+ [  30 1180]] 
+23:13:37 : Epoch [12/50], Loss: 0.0017, Accuracy: 0.8809, Precision: 0.9770, Recall: 0.7919, Specificity: 0.9794, F1-Score: 0.8748 
+23:13:43 : Training Confusion for Epoch 13:
+[[1197   44]
+ [  43 1167]] 
+23:13:44 : Epoch [13/50], Loss: 0.0014, Accuracy: 0.9445, Precision: 0.9645, Recall: 0.9286, Specificity: 0.9622, F1-Score: 0.9462 
+23:13:50 : Training Confusion for Epoch 14:
+[[1213   28]
+ [  28 1182]] 
+23:13:51 : Epoch [14/50], Loss: 0.0065, Accuracy: 0.9511, Precision: 0.9710, Recall: 0.9348, Specificity: 0.9691, F1-Score: 0.9525 
+23:13:57 : Training Confusion for Epoch 15:
+[[1220   21]
+ [  25 1185]] 
+23:13:58 : Epoch [15/50], Loss: 0.0266, Accuracy: 0.9494, Precision: 0.9678, Recall: 0.9348, Specificity: 0.9656, F1-Score: 0.9510 
+23:14:04 : Training Confusion for Epoch 16:
+[[1208   33]
+ [  34 1176]] 
+23:14:05 : Epoch [16/50], Loss: 0.0016, Accuracy: 0.8336, Precision: 0.9783, Recall: 0.6988, Specificity: 0.9828, F1-Score: 0.8152 
+23:14:11 : Training Confusion for Epoch 17:
+[[1222   19]
+ [  14 1196]] 
+23:14:12 : Epoch [17/50], Loss: 0.0001, Accuracy: 0.6558, Precision: 0.9826, Recall: 0.3509, Specificity: 0.9931, F1-Score: 0.5172 
+23:14:19 : Training Confusion for Epoch 18:
+[[1211   30]
+ [  26 1184]] 
+23:14:19 : Epoch [18/50], Loss: 0.0074, Accuracy: 0.9070, Precision: 0.8610, Recall: 0.9814, Specificity: 0.8247, F1-Score: 0.9173 
+23:14:26 : Training Confusion for Epoch 19:
+[[1211   30]
+ [  25 1185]] 
+23:14:27 : Epoch [19/50], Loss: 0.0001, Accuracy: 0.9135, Precision: 0.9719, Recall: 0.8602, Specificity: 0.9725, F1-Score: 0.9127 
+23:14:33 : Training Confusion for Epoch 20:
+[[1209   32]
+ [  27 1183]] 
+23:14:34 : Epoch [20/50], Loss: 0.0007, Accuracy: 0.9511, Precision: 0.9650, Recall: 0.9410, Specificity: 0.9622, F1-Score: 0.9528 
+23:14:40 : Training Confusion for Epoch 21:
+[[1225   16]
+ [  15 1195]] 
+23:14:41 : Epoch [21/50], Loss: 0.0044, Accuracy: 0.9201, Precision: 0.8867, Recall: 0.9720, Specificity: 0.8625, F1-Score: 0.9274 
+23:14:47 : Training Confusion for Epoch 22:
+[[1228   13]
+ [  17 1193]] 
+23:14:48 : Epoch [22/50], Loss: 0.0005, Accuracy: 0.9299, Precision: 0.9729, Recall: 0.8913, Specificity: 0.9725, F1-Score: 0.9303 
+23:14:54 : Training Confusion for Epoch 23:
+[[1223   18]
+ [  16 1194]] 
+23:14:55 : Epoch [23/50], Loss: 0.0001, Accuracy: 0.8711, Precision: 0.9765, Recall: 0.7733, Specificity: 0.9794, F1-Score: 0.8631 
+23:15:01 : Training Confusion for Epoch 24:
+[[1226   15]
+ [  21 1189]] 
+23:15:02 : Epoch [24/50], Loss: 0.0001, Accuracy: 0.9103, Precision: 0.9751, Recall: 0.8509, Specificity: 0.9759, F1-Score: 0.9088 
+23:15:09 : Training Confusion for Epoch 25:
+[[1221   20]
+ [  18 1192]] 
+23:15:10 : Epoch [25/50], Loss: 0.0048, Accuracy: 0.6248, Precision: 0.9694, Recall: 0.2950, Specificity: 0.9897, F1-Score: 0.4524 
+23:15:16 : Training Confusion for Epoch 26:
+[[1225   16]
+ [  23 1187]] 
+23:15:17 : Epoch [26/50], Loss: 0.0004, Accuracy: 0.9576, Precision: 0.9512, Recall: 0.9689, Specificity: 0.9450, F1-Score: 0.9600 
+23:15:23 : Training Confusion for Epoch 27:
+[[1231   10]
+ [  11 1199]] 
+23:15:24 : Epoch [27/50], Loss: 0.0001, Accuracy: 0.9282, Precision: 0.8883, Recall: 0.9876, Specificity: 0.8625, F1-Score: 0.9353 
+23:15:30 : Training Confusion for Epoch 28:
+[[1219   22]
+ [  19 1191]] 
+23:15:31 : Epoch [28/50], Loss: 0.0008, Accuracy: 0.9527, Precision: 0.9592, Recall: 0.9503, Specificity: 0.9553, F1-Score: 0.9548 
+23:15:38 : Training Confusion for Epoch 29:
+[[1231   10]
+ [   9 1201]] 
+23:15:38 : Epoch [29/50], Loss: 0.0006, Accuracy: 0.9380, Precision: 0.9765, Recall: 0.9037, Specificity: 0.9759, F1-Score: 0.9387 
+23:15:45 : Training Confusion for Epoch 30:
+[[1236    5]
+ [  10 1200]] 
+23:15:46 : Epoch [30/50], Loss: 0.0005, Accuracy: 0.9005, Precision: 0.9711, Recall: 0.8354, Specificity: 0.9725, F1-Score: 0.8982 
+23:15:52 : Training Confusion for Epoch 31:
+[[1233    8]
+ [  11 1199]] 
+23:15:53 : Epoch [31/50], Loss: 0.0003, Accuracy: 0.9445, Precision: 0.9286, Recall: 0.9689, Specificity: 0.9175, F1-Score: 0.9483 
+23:15:59 : Training Confusion for Epoch 32:
+[[1225   16]
+ [  20 1190]] 
+23:16:00 : Epoch [32/50], Loss: 0.0011, Accuracy: 0.9494, Precision: 0.9709, Recall: 0.9317, Specificity: 0.9691, F1-Score: 0.9509 
+23:16:06 : Training Confusion for Epoch 33:
+[[1228   13]
+ [  15 1195]] 
+23:16:07 : Epoch [33/50], Loss: 0.0020, Accuracy: 0.9201, Precision: 0.8760, Recall: 0.9876, Specificity: 0.8454, F1-Score: 0.9285 
+23:16:13 : Training Confusion for Epoch 34:
+[[1225   16]
+ [  19 1191]] 
+23:16:14 : Epoch [34/50], Loss: 0.0034, Accuracy: 0.8956, Precision: 0.9778, Recall: 0.8199, Specificity: 0.9794, F1-Score: 0.8919 
+23:16:21 : Training Confusion for Epoch 35:
+[[1239    2]
+ [   5 1205]] 
+23:16:21 : Epoch [35/50], Loss: 0.0006, Accuracy: 0.9299, Precision: 0.9729, Recall: 0.8913, Specificity: 0.9725, F1-Score: 0.9303 
+23:16:28 : Training Confusion for Epoch 36:
+[[1235    6]
+ [  13 1197]] 
+23:16:29 : Epoch [36/50], Loss: 0.0010, Accuracy: 0.9462, Precision: 0.9339, Recall: 0.9658, Specificity: 0.9244, F1-Score: 0.9496 
+23:17:06 : Training Confusion for Epoch 37:
+[[1239    2]
+ [   7 1203]] 
+23:17:07 : Epoch [37/50], Loss: 0.0032, Accuracy: 0.9429, Precision: 0.9184, Recall: 0.9783, Specificity: 0.9038, F1-Score: 0.9474 
+23:17:14 : Training Confusion for Epoch 38:
+[[1231   10]
+ [   9 1201]] 
+23:17:14 : Epoch [38/50], Loss: 0.0029, Accuracy: 0.9462, Precision: 0.9646, Recall: 0.9317, Specificity: 0.9622, F1-Score: 0.9479 
+23:17:21 : Training Confusion for Epoch 39:
+[[1239    2]
+ [   5 1205]] 
+23:17:22 : Epoch [39/50], Loss: 0.0000, Accuracy: 0.9511, Precision: 0.9563, Recall: 0.9503, Specificity: 0.9519, F1-Score: 0.9533 
+23:17:29 : Training Confusion for Epoch 40:
+[[1232    9]
+ [  11 1199]] 
+23:17:30 : Epoch [40/50], Loss: 0.0006, Accuracy: 0.9478, Precision: 0.9448, Recall: 0.9565, Specificity: 0.9381, F1-Score: 0.9506 
+23:17:37 : Training Confusion for Epoch 41:
+[[1238    3]
+ [   4 1206]] 
+23:17:38 : Epoch [41/50], Loss: 0.0006, Accuracy: 0.9462, Precision: 0.9288, Recall: 0.9720, Specificity: 0.9175, F1-Score: 0.9499 
+23:17:44 : Training Confusion for Epoch 42:
+[[1241    0]
+ [   4 1206]] 
+23:17:45 : Epoch [42/50], Loss: 0.0006, Accuracy: 0.9511, Precision: 0.9620, Recall: 0.9441, Specificity: 0.9588, F1-Score: 0.9530 
+23:17:51 : Training Confusion for Epoch 43:
+[[1225   16]
+ [  15 1195]] 
+23:17:52 : Epoch [43/50], Loss: 0.0011, Accuracy: 0.9462, Precision: 0.9313, Recall: 0.9689, Specificity: 0.9210, F1-Score: 0.9498 
+23:17:58 : Training Confusion for Epoch 44:
+[[1230   11]
+ [  11 1199]] 
+23:17:59 : Epoch [44/50], Loss: 0.0018, Accuracy: 0.9315, Precision: 0.8977, Recall: 0.9814, Specificity: 0.8763, F1-Score: 0.9377 
+23:18:05 : Training Confusion for Epoch 45:
+[[1226   15]
+ [  13 1197]] 
+23:18:06 : Epoch [45/50], Loss: 0.0001, Accuracy: 0.9462, Precision: 0.9392, Recall: 0.9596, Specificity: 0.9313, F1-Score: 0.9493 
+23:18:12 : Training Confusion for Epoch 46:
+[[1238    3]
+ [   9 1201]] 
+23:18:13 : Epoch [46/50], Loss: 0.0009, Accuracy: 0.9233, Precision: 0.8895, Recall: 0.9752, Specificity: 0.8660, F1-Score: 0.9304 
+23:18:19 : Training Confusion for Epoch 47:
+[[1227   14]
+ [  10 1200]] 
+23:18:20 : Epoch [47/50], Loss: 0.0004, Accuracy: 0.9021, Precision: 0.9781, Recall: 0.8323, Specificity: 0.9794, F1-Score: 0.8993 
+23:18:27 : Training Confusion for Epoch 48:
+[[1238    3]
+ [   4 1206]] 
+23:18:27 : Epoch [48/50], Loss: 0.0002, Accuracy: 0.9054, Precision: 0.9681, Recall: 0.8478, Specificity: 0.9691, F1-Score: 0.9040 
+23:18:34 : Training Confusion for Epoch 49:
+[[1238    3]
+ [   5 1205]] 
+23:18:34 : Epoch [49/50], Loss: 0.0001, Accuracy: 0.9315, Precision: 0.9636, Recall: 0.9037, Specificity: 0.9622, F1-Score: 0.9327 
+23:18:41 : Training Confusion for Epoch 50:
+[[1232    9]
+ [   9 1201]] 
+23:18:42 : Epoch [50/50], Loss: 0.0048, Accuracy: 0.9462, Precision: 0.9392, Recall: 0.9596, Specificity: 0.9313, F1-Score: 0.9493 
+23:18:42 : FOLD 3 
+23:18:43 : ---------------------------------- 
+23:18:49 : Training Confusion for Epoch 1:
+[[1019  214]
+ [ 141 1077]] 
+23:18:50 : Epoch [1/50], Loss: 0.4506, Accuracy: 0.9168, Precision: 0.8997, Recall: 0.9427, Specificity: 0.8896, F1-Score: 0.9207 
+23:18:56 : Training Confusion for Epoch 2:
+[[1111  122]
+ [ 104 1114]] 
+23:18:57 : Epoch [2/50], Loss: 0.2265, Accuracy: 0.9168, Precision: 0.9458, Recall: 0.8885, Specificity: 0.9465, F1-Score: 0.9163 
+23:19:03 : Training Confusion for Epoch 3:
+[[1132  101]
+ [  73 1145]] 
+23:19:04 : Epoch [3/50], Loss: 0.0556, Accuracy: 0.9347, Precision: 0.9536, Recall: 0.9172, Specificity: 0.9532, F1-Score: 0.9351 
+23:19:10 : Training Confusion for Epoch 4:
+[[1145   88]
+ [  68 1150]] 
+23:19:11 : Epoch [4/50], Loss: 0.1248, Accuracy: 0.9429, Precision: 0.9457, Recall: 0.9427, Specificity: 0.9431, F1-Score: 0.9442 
+23:19:17 : Training Confusion for Epoch 5:
+[[1147   86]
+ [  58 1160]] 
+23:19:18 : Epoch [5/50], Loss: 0.2547, Accuracy: 0.9315, Precision: 0.9072, Recall: 0.9650, Specificity: 0.8963, F1-Score: 0.9352 
+23:19:25 : Training Confusion for Epoch 6:
+[[1149   84]
+ [  60 1158]] 
+23:19:25 : Epoch [6/50], Loss: 0.0912, Accuracy: 0.9429, Precision: 0.9486, Recall: 0.9395, Specificity: 0.9465, F1-Score: 0.9440 
+23:19:32 : Training Confusion for Epoch 7:
+[[1164   69]
+ [  56 1162]] 
+23:19:33 : Epoch [7/50], Loss: 0.0485, Accuracy: 0.6835, Precision: 1.0000, Recall: 0.3822, Specificity: 1.0000, F1-Score: 0.5530 
+23:19:39 : Training Confusion for Epoch 8:
+[[1166   67]
+ [  48 1170]] 
+23:19:40 : Epoch [8/50], Loss: 0.0502, Accuracy: 0.8891, Precision: 0.9805, Recall: 0.7994, Specificity: 0.9833, F1-Score: 0.8807 
+23:19:46 : Training Confusion for Epoch 9:
+[[1167   66]
+ [  49 1169]] 
+23:19:47 : Epoch [9/50], Loss: 0.1235, Accuracy: 0.9396, Precision: 0.9369, Recall: 0.9459, Specificity: 0.9331, F1-Score: 0.9414 
+23:19:53 : Training Confusion for Epoch 10:
+[[1178   55]
+ [  55 1163]] 
+23:19:54 : Epoch [10/50], Loss: 0.0627, Accuracy: 0.9445, Precision: 0.9321, Recall: 0.9618, Specificity: 0.9264, F1-Score: 0.9467 
+23:20:00 : Training Confusion for Epoch 11:
+[[1178   55]
+ [  52 1166]] 
+23:20:01 : Epoch [11/50], Loss: 0.1670, Accuracy: 0.9478, Precision: 0.9247, Recall: 0.9777, Specificity: 0.9164, F1-Score: 0.9505 
+23:20:25 : Training Confusion for Epoch 12:
+[[1191   42]
+ [  36 1182]] 
+23:20:26 : Epoch [12/50], Loss: 0.0623, Accuracy: 0.9494, Precision: 0.9609, Recall: 0.9395, Specificity: 0.9599, F1-Score: 0.9501 
+23:20:32 : Training Confusion for Epoch 13:
+[[1189   44]
+ [  32 1186]] 
+23:20:33 : Epoch [13/50], Loss: 0.0627, Accuracy: 0.9560, Precision: 0.9736, Recall: 0.9395, Specificity: 0.9732, F1-Score: 0.9562 
+23:20:40 : Training Confusion for Epoch 14:
+[[1202   31]
+ [  31 1187]] 
+23:20:40 : Epoch [14/50], Loss: 0.0007, Accuracy: 0.6917, Precision: 0.9921, Recall: 0.4013, Specificity: 0.9967, F1-Score: 0.5714 
+23:20:47 : Training Confusion for Epoch 15:
+[[1200   33]
+ [  37 1181]] 
+23:20:48 : Epoch [15/50], Loss: 0.2975, Accuracy: 0.9315, Precision: 0.8977, Recall: 0.9777, Specificity: 0.8829, F1-Score: 0.9360 
+23:20:54 : Training Confusion for Epoch 16:
+[[1211   22]
+ [  27 1191]] 
+23:20:55 : Epoch [16/50], Loss: 0.0002, Accuracy: 0.6917, Precision: 0.9921, Recall: 0.4013, Specificity: 0.9967, F1-Score: 0.5714 
+23:21:01 : Training Confusion for Epoch 17:
+[[1210   23]
+ [  29 1189]] 
+23:21:02 : Epoch [17/50], Loss: 0.0080, Accuracy: 0.9494, Precision: 0.9639, Recall: 0.9363, Specificity: 0.9632, F1-Score: 0.9499 
+23:21:08 : Training Confusion for Epoch 18:
+[[1211   22]
+ [  25 1193]] 
+23:21:09 : Epoch [18/50], Loss: 0.0402, Accuracy: 0.7961, Precision: 0.9896, Recall: 0.6083, Specificity: 0.9933, F1-Score: 0.7535 
+23:21:15 : Training Confusion for Epoch 19:
+[[1221   12]
+ [  24 1194]] 
+23:21:16 : Epoch [19/50], Loss: 0.0180, Accuracy: 0.9086, Precision: 0.9813, Recall: 0.8376, Specificity: 0.9833, F1-Score: 0.9038 
+23:21:23 : Training Confusion for Epoch 20:
+[[1220   13]
+ [  25 1193]] 
+23:21:23 : Epoch [20/50], Loss: 0.2629, Accuracy: 0.9478, Precision: 0.9123, Recall: 0.9936, Specificity: 0.8997, F1-Score: 0.9512 
+23:21:30 : Training Confusion for Epoch 21:
+[[1217   16]
+ [  19 1199]] 
+23:21:31 : Epoch [21/50], Loss: 1.0458, Accuracy: 0.9429, Precision: 0.9292, Recall: 0.9618, Specificity: 0.9231, F1-Score: 0.9452 
+23:21:37 : Training Confusion for Epoch 22:
+[[1213   20]
+ [  31 1187]] 
+23:21:38 : Epoch [22/50], Loss: 7.6723, Accuracy: 0.5155, Precision: 0.5139, Recall: 1.0000, Specificity: 0.0067, F1-Score: 0.6789 
+23:21:44 : Training Confusion for Epoch 23:
+[[1213   20]
+ [  20 1198]] 
+23:21:45 : Epoch [23/50], Loss: 0.0015, Accuracy: 0.8793, Precision: 0.9878, Recall: 0.7739, Specificity: 0.9900, F1-Score: 0.8679 
+23:21:51 : Training Confusion for Epoch 24:
+[[1216   17]
+ [  23 1195]] 
+23:21:52 : Epoch [24/50], Loss: 0.0317, Accuracy: 0.9217, Precision: 0.8736, Recall: 0.9904, Specificity: 0.8495, F1-Score: 0.9284 
+23:21:58 : Training Confusion for Epoch 25:
+[[1222   11]
+ [  18 1200]] 
+23:21:59 : Epoch [25/50], Loss: 0.0003, Accuracy: 0.8548, Precision: 0.9870, Recall: 0.7261, Specificity: 0.9900, F1-Score: 0.8367 
+23:22:05 : Training Confusion for Epoch 26:
+[[1217   16]
+ [  22 1196]] 
+23:22:06 : Epoch [26/50], Loss: 0.3083, Accuracy: 0.9315, Precision: 0.8886, Recall: 0.9904, Specificity: 0.8696, F1-Score: 0.9367 
+23:22:12 : Training Confusion for Epoch 27:
+[[1227    6]
+ [  11 1207]] 
+23:22:13 : Epoch [27/50], Loss: 0.0005, Accuracy: 0.9282, Precision: 0.9655, Recall: 0.8917, Specificity: 0.9666, F1-Score: 0.9272 
+23:22:20 : Training Confusion for Epoch 28:
+[[1223   10]
+ [  17 1201]] 
+23:22:20 : Epoch [28/50], Loss: 0.0031, Accuracy: 0.9494, Precision: 0.9609, Recall: 0.9395, Specificity: 0.9599, F1-Score: 0.9501 
+23:22:27 : Training Confusion for Epoch 29:
+[[1219   14]
+ [  20 1198]] 
+23:22:28 : Epoch [29/50], Loss: 0.0002, Accuracy: 0.5139, Precision: 1.0000, Recall: 0.0510, Specificity: 1.0000, F1-Score: 0.0970 
+23:22:34 : Training Confusion for Epoch 30:
+[[1217   16]
+ [  18 1200]] 
+23:22:35 : Epoch [30/50], Loss: 0.1658, Accuracy: 0.9462, Precision: 0.9518, Recall: 0.9427, Specificity: 0.9498, F1-Score: 0.9472 
+23:22:41 : Training Confusion for Epoch 31:
+[[1226    7]
+ [  12 1206]] 
+23:22:42 : Epoch [31/50], Loss: 0.0127, Accuracy: 0.9478, Precision: 0.9379, Recall: 0.9618, Specificity: 0.9331, F1-Score: 0.9497 
+23:23:21 : Training Confusion for Epoch 32:
+[[1217   16]
+ [  23 1195]] 
+23:23:22 : Epoch [32/50], Loss: 0.2574, Accuracy: 0.9282, Precision: 0.9720, Recall: 0.8854, Specificity: 0.9732, F1-Score: 0.9267 
+23:23:28 : Training Confusion for Epoch 33:
+[[1226    7]
+ [  15 1203]] 
+23:23:29 : Epoch [33/50], Loss: 0.0063, Accuracy: 0.9364, Precision: 0.9725, Recall: 0.9013, Specificity: 0.9732, F1-Score: 0.9355 
+23:23:35 : Training Confusion for Epoch 34:
+[[1228    5]
+ [  12 1206]] 
+23:23:36 : Epoch [34/50], Loss: 0.0251, Accuracy: 0.9478, Precision: 0.9578, Recall: 0.9395, Specificity: 0.9565, F1-Score: 0.9486 
+23:23:42 : Training Confusion for Epoch 35:
+[[1225    8]
+ [   8 1210]] 
+23:23:43 : Epoch [35/50], Loss: 0.0011, Accuracy: 0.9331, Precision: 0.9723, Recall: 0.8949, Specificity: 0.9732, F1-Score: 0.9320 
+23:23:50 : Training Confusion for Epoch 36:
+[[1222   11]
+ [  15 1203]] 
+23:23:50 : Epoch [36/50], Loss: 0.6643, Accuracy: 0.9347, Precision: 0.9053, Recall: 0.9745, Specificity: 0.8930, F1-Score: 0.9387 
+23:23:57 : Training Confusion for Epoch 37:
+[[1229    4]
+ [   7 1211]] 
+23:23:58 : Epoch [37/50], Loss: 0.2548, Accuracy: 0.9331, Precision: 0.9003, Recall: 0.9777, Specificity: 0.8863, F1-Score: 0.9374 
+23:24:04 : Training Confusion for Epoch 38:
+[[1227    6]
+ [  13 1205]] 
+23:24:05 : Epoch [38/50], Loss: 0.0006, Accuracy: 0.9445, Precision: 0.9605, Recall: 0.9299, Specificity: 0.9599, F1-Score: 0.9450 
+23:24:11 : Training Confusion for Epoch 39:
+[[1227    6]
+ [   9 1209]] 
+23:24:12 : Epoch [39/50], Loss: 0.0002, Accuracy: 0.7292, Precision: 0.9805, Recall: 0.4809, Specificity: 0.9900, F1-Score: 0.6453 
+23:24:18 : Training Confusion for Epoch 40:
+[[1221   12]
+ [  25 1193]] 
+23:24:19 : Epoch [40/50], Loss: 0.2574, Accuracy: 0.9543, Precision: 0.9497, Recall: 0.9618, Specificity: 0.9465, F1-Score: 0.9557 
+23:24:25 : Training Confusion for Epoch 41:
+[[1229    4]
+ [  10 1208]] 
+23:24:26 : Epoch [41/50], Loss: 1.5188, Accuracy: 0.8744, Precision: 0.8062, Recall: 0.9936, Specificity: 0.7492, F1-Score: 0.8902 
+23:24:32 : Training Confusion for Epoch 42:
+[[1223   10]
+ [  11 1207]] 
+23:24:33 : Epoch [42/50], Loss: 0.0072, Accuracy: 0.9315, Precision: 0.9722, Recall: 0.8917, Specificity: 0.9732, F1-Score: 0.9302 
+23:24:39 : Training Confusion for Epoch 43:
+[[1227    6]
+ [  13 1205]] 
+23:24:40 : Epoch [43/50], Loss: 0.0011, Accuracy: 0.9331, Precision: 0.9475, Recall: 0.9204, Specificity: 0.9465, F1-Score: 0.9338 
+23:24:46 : Training Confusion for Epoch 44:
+[[1227    6]
+ [   8 1210]] 
+23:24:47 : Epoch [44/50], Loss: 0.0074, Accuracy: 0.9478, Precision: 0.9669, Recall: 0.9299, Specificity: 0.9666, F1-Score: 0.9481 
+23:24:54 : Training Confusion for Epoch 45:
+[[1229    4]
+ [   8 1210]] 
+23:24:54 : Epoch [45/50], Loss: 0.0004, Accuracy: 0.8140, Precision: 0.9808, Recall: 0.6497, Specificity: 0.9866, F1-Score: 0.7816 
+23:25:01 : Training Confusion for Epoch 46:
+[[1229    4]
+ [   6 1212]] 
+23:25:02 : Epoch [46/50], Loss: 0.0042, Accuracy: 0.9429, Precision: 0.9827, Recall: 0.9045, Specificity: 0.9833, F1-Score: 0.9420 
+23:25:08 : Training Confusion for Epoch 47:
+[[1232    1]
+ [   6 1212]] 
+23:25:09 : Epoch [47/50], Loss: 0.0016, Accuracy: 0.9674, Precision: 0.9652, Recall: 0.9713, Specificity: 0.9632, F1-Score: 0.9683 
+23:25:15 : Training Confusion for Epoch 48:
+[[1229    4]
+ [   5 1213]] 
+23:25:16 : Epoch [48/50], Loss: 0.0813, Accuracy: 0.9478, Precision: 0.9123, Recall: 0.9936, Specificity: 0.8997, F1-Score: 0.9512 
+23:25:22 : Training Confusion for Epoch 49:
+[[1224    9]
+ [  19 1199]] 
+23:25:23 : Epoch [49/50], Loss: 0.5057, Accuracy: 0.9184, Precision: 0.8729, Recall: 0.9841, Specificity: 0.8495, F1-Score: 0.9251 
+23:25:30 : Training Confusion for Epoch 50:
+[[1228    5]
+ [  12 1206]] 
+23:25:30 : Epoch [50/50], Loss: 0.7103, Accuracy: 0.9494, Precision: 0.9275, Recall: 0.9777, Specificity: 0.9197, F1-Score: 0.9519 
+23:25:31 : FOLD 4 
+23:25:31 : ---------------------------------- 
+23:25:38 : Training Confusion for Epoch 1:
+[[1014  214]
+ [ 155 1069]] 
+23:25:38 : Epoch [1/50], Loss: 0.0525, Accuracy: 0.8562, Precision: 0.8005, Recall: 0.9513, Specificity: 0.7599, F1-Score: 0.8694 
+23:25:45 : Training Confusion for Epoch 2:
+[[1087  141]
+ [  82 1142]] 
+23:25:46 : Epoch [2/50], Loss: 0.0019, Accuracy: 0.7729, Precision: 0.9669, Recall: 0.5682, Specificity: 0.9803, F1-Score: 0.7157 
+23:26:24 : Training Confusion for Epoch 3:
+[[1119  109]
+ [  64 1160]] 
+23:26:25 : Epoch [3/50], Loss: 0.0229, Accuracy: 0.9134, Precision: 0.8783, Recall: 0.9610, Specificity: 0.8651, F1-Score: 0.9178 
+23:26:31 : Training Confusion for Epoch 4:
+[[1145   83]
+ [  62 1162]] 
+23:26:32 : Epoch [4/50], Loss: 0.0008, Accuracy: 0.8922, Precision: 0.9654, Recall: 0.8149, Specificity: 0.9704, F1-Score: 0.8838 
+23:26:39 : Training Confusion for Epoch 5:
+[[1157   71]
+ [  53 1171]] 
+23:26:40 : Epoch [5/50], Loss: 0.0024, Accuracy: 0.9036, Precision: 0.9278, Recall: 0.8766, Specificity: 0.9309, F1-Score: 0.9015 
+23:26:46 : Training Confusion for Epoch 6:
+[[1151   77]
+ [  54 1170]] 
+23:26:47 : Epoch [6/50], Loss: 0.0024, Accuracy: 0.9297, Precision: 0.9553, Recall: 0.9026, Specificity: 0.9572, F1-Score: 0.9282 
+23:26:53 : Training Confusion for Epoch 7:
+[[1159   69]
+ [  42 1182]] 
+23:26:54 : Epoch [7/50], Loss: 0.0036, Accuracy: 0.9248, Precision: 0.9281, Recall: 0.9221, Specificity: 0.9276, F1-Score: 0.9251 
+23:27:00 : Training Confusion for Epoch 8:
+[[1177   51]
+ [  47 1177]] 
+23:27:01 : Epoch [8/50], Loss: 0.0000, Accuracy: 0.7516, Precision: 0.9588, Recall: 0.5292, Specificity: 0.9770, F1-Score: 0.6820 
+23:27:07 : Training Confusion for Epoch 9:
+[[1170   58]
+ [  39 1185]] 
+23:27:08 : Epoch [9/50], Loss: 0.0019, Accuracy: 0.9167, Precision: 0.8882, Recall: 0.9545, Specificity: 0.8783, F1-Score: 0.9202 
+23:27:15 : Training Confusion for Epoch 10:
+[[1174   54]
+ [  39 1185]] 
+23:27:15 : Epoch [10/50], Loss: 0.0001, Accuracy: 0.8578, Precision: 0.9702, Recall: 0.7403, Specificity: 0.9770, F1-Score: 0.8398 
+23:27:22 : Training Confusion for Epoch 11:
+[[1171   57]
+ [  34 1190]] 
+23:27:23 : Epoch [11/50], Loss: 0.0061, Accuracy: 0.9265, Precision: 0.9175, Recall: 0.9383, Specificity: 0.9145, F1-Score: 0.9278 
+23:27:29 : Training Confusion for Epoch 12:
+[[1178   50]
+ [  35 1189]] 
+23:27:30 : Epoch [12/50], Loss: 0.0003, Accuracy: 0.7157, Precision: 0.9527, Recall: 0.4578, Specificity: 0.9770, F1-Score: 0.6184 
+23:27:36 : Training Confusion for Epoch 13:
+[[1183   45]
+ [  26 1198]] 
+23:27:37 : Epoch [13/50], Loss: 0.0002, Accuracy: 0.8824, Precision: 0.9538, Recall: 0.8052, Specificity: 0.9605, F1-Score: 0.8732 
+23:27:43 : Training Confusion for Epoch 14:
+[[1184   44]
+ [  30 1194]] 
+23:27:44 : Epoch [14/50], Loss: 0.0006, Accuracy: 0.9314, Precision: 0.9463, Recall: 0.9156, Specificity: 0.9474, F1-Score: 0.9307 
+23:27:50 : Training Confusion for Epoch 15:
+[[1202   26]
+ [  25 1199]] 
+23:27:51 : Epoch [15/50], Loss: 0.0013, Accuracy: 0.8431, Precision: 0.9609, Recall: 0.7175, Specificity: 0.9704, F1-Score: 0.8216 
+23:27:57 : Training Confusion for Epoch 16:
+[[1193   35]
+ [  29 1195]] 
+23:27:58 : Epoch [16/50], Loss: 0.0001, Accuracy: 0.9232, Precision: 0.9065, Recall: 0.9448, Specificity: 0.9013, F1-Score: 0.9253 
+23:28:04 : Training Confusion for Epoch 17:
+[[1197   31]
+ [  24 1200]] 
+23:28:05 : Epoch [17/50], Loss: 0.0001, Accuracy: 0.8660, Precision: 0.9556, Recall: 0.7695, Specificity: 0.9638, F1-Score: 0.8525 
+23:28:12 : Training Confusion for Epoch 18:
+[[1208   20]
+ [  27 1197]] 
+23:28:13 : Epoch [18/50], Loss: 0.0004, Accuracy: 0.9183, Precision: 0.9329, Recall: 0.9026, Specificity: 0.9342, F1-Score: 0.9175 
+23:28:19 : Training Confusion for Epoch 19:
+[[1211   17]
+ [  13 1211]] 
+23:28:20 : Epoch [19/50], Loss: 0.0042, Accuracy: 0.9134, Precision: 0.8761, Recall: 0.9643, Specificity: 0.8618, F1-Score: 0.9181 
+23:28:26 : Training Confusion for Epoch 20:
+[[1211   17]
+ [  26 1198]] 
+23:28:27 : Epoch [20/50], Loss: 0.0025, Accuracy: 0.9118, Precision: 0.9472, Recall: 0.8734, Specificity: 0.9507, F1-Score: 0.9088 
+23:28:33 : Training Confusion for Epoch 21:
+[[1214   14]
+ [  13 1211]] 
+23:28:34 : Epoch [21/50], Loss: 0.0001, Accuracy: 0.9199, Precision: 0.9060, Recall: 0.9383, Specificity: 0.9013, F1-Score: 0.9219 
+23:28:40 : Training Confusion for Epoch 22:
+[[1214   14]
+ [  21 1203]] 
+23:28:41 : Epoch [22/50], Loss: 0.0000, Accuracy: 0.9150, Precision: 0.9672, Recall: 0.8604, Specificity: 0.9704, F1-Score: 0.9107 
+23:29:21 : Training Confusion for Epoch 23:
+[[1203   25]
+ [  16 1208]] 
+23:29:22 : Epoch [23/50], Loss: 0.0001, Accuracy: 0.9248, Precision: 0.8994, Recall: 0.9578, Specificity: 0.8914, F1-Score: 0.9277 
+23:29:28 : Training Confusion for Epoch 24:
+[[1221    7]
+ [  13 1211]] 
+23:29:29 : Epoch [24/50], Loss: 0.0003, Accuracy: 0.9069, Precision: 0.9010, Recall: 0.9156, Specificity: 0.8980, F1-Score: 0.9082 
+23:29:36 : Training Confusion for Epoch 25:
+[[1217   11]
+ [  11 1213]] 
+23:29:37 : Epoch [25/50], Loss: 0.0002, Accuracy: 0.9167, Precision: 0.9356, Recall: 0.8961, Specificity: 0.9375, F1-Score: 0.9154 
+23:29:43 : Training Confusion for Epoch 26:
+[[1220    8]
+ [  10 1214]] 
+23:29:44 : Epoch [26/50], Loss: 0.0001, Accuracy: 0.9314, Precision: 0.9433, Recall: 0.9188, Specificity: 0.9441, F1-Score: 0.9309 
+23:29:51 : Training Confusion for Epoch 27:
+[[1221    7]
+ [   6 1218]] 
+23:29:52 : Epoch [27/50], Loss: 0.0002, Accuracy: 0.9216, Precision: 0.9362, Recall: 0.9058, Specificity: 0.9375, F1-Score: 0.9208 
+23:29:58 : Training Confusion for Epoch 28:
+[[1218   10]
+ [  12 1212]] 
+23:29:59 : Epoch [28/50], Loss: 0.0027, Accuracy: 0.9265, Precision: 0.9122, Recall: 0.9448, Specificity: 0.9079, F1-Score: 0.9282 
+23:30:06 : Training Confusion for Epoch 29:
+[[1219    9]
+ [  10 1214]] 
+23:30:06 : Epoch [29/50], Loss: 0.0010, Accuracy: 0.9281, Precision: 0.9024, Recall: 0.9610, Specificity: 0.8947, F1-Score: 0.9308 
+23:30:13 : Training Confusion for Epoch 30:
+[[1210   18]
+ [  19 1205]] 
+23:30:13 : Epoch [30/50], Loss: 0.0009, Accuracy: 0.9281, Precision: 0.9074, Recall: 0.9545, Specificity: 0.9013, F1-Score: 0.9304 
+23:30:20 : Training Confusion for Epoch 31:
+[[1215   13]
+ [  16 1208]] 
+23:30:21 : Epoch [31/50], Loss: 0.0001, Accuracy: 0.9085, Precision: 0.9286, Recall: 0.8864, Specificity: 0.9309, F1-Score: 0.9070 
+23:30:27 : Training Confusion for Epoch 32:
+[[1206   22]
+ [  16 1208]] 
+23:30:28 : Epoch [32/50], Loss: 0.0003, Accuracy: 0.9085, Precision: 0.8728, Recall: 0.9578, Specificity: 0.8586, F1-Score: 0.9133 
+23:30:34 : Training Confusion for Epoch 33:
+[[1225    3]
+ [  10 1214]] 
+23:30:35 : Epoch [33/50], Loss: 0.0001, Accuracy: 0.8905, Precision: 0.9725, Recall: 0.8052, Specificity: 0.9770, F1-Score: 0.8810 
+23:30:41 : Training Confusion for Epoch 34:
+[[1226    2]
+ [   8 1216]] 
+23:30:42 : Epoch [34/50], Loss: 0.0004, Accuracy: 0.9216, Precision: 0.9167, Recall: 0.9286, Specificity: 0.9145, F1-Score: 0.9226 
+23:30:48 : Training Confusion for Epoch 35:
+[[1228    0]
+ [   2 1222]] 
+23:30:49 : Epoch [35/50], Loss: 0.0002, Accuracy: 0.9167, Precision: 0.9477, Recall: 0.8831, Specificity: 0.9507, F1-Score: 0.9143 
+23:30:55 : Training Confusion for Epoch 36:
+[[1219    9]
+ [  10 1214]] 
+23:30:56 : Epoch [36/50], Loss: 0.0001, Accuracy: 0.9297, Precision: 0.9553, Recall: 0.9026, Specificity: 0.9572, F1-Score: 0.9282 
+23:31:03 : Training Confusion for Epoch 37:
+[[1226    2]
+ [   2 1222]] 
+23:31:03 : Epoch [37/50], Loss: 0.0001, Accuracy: 0.9265, Precision: 0.9071, Recall: 0.9513, Specificity: 0.9013, F1-Score: 0.9287 
+23:31:10 : Training Confusion for Epoch 38:
+[[1228    0]
+ [   4 1220]] 
+23:31:11 : Epoch [38/50], Loss: 0.0010, Accuracy: 0.9150, Precision: 0.8951, Recall: 0.9416, Specificity: 0.8882, F1-Score: 0.9177 
+23:31:17 : Training Confusion for Epoch 39:
+[[1219    9]
+ [  14 1210]] 
+23:31:18 : Epoch [39/50], Loss: 0.0021, Accuracy: 0.8709, Precision: 0.9455, Recall: 0.7890, Specificity: 0.9539, F1-Score: 0.8602 
+23:31:24 : Training Confusion for Epoch 40:
+[[1217   11]
+ [  10 1214]] 
+23:31:25 : Epoch [40/50], Loss: 0.0091, Accuracy: 0.8399, Precision: 0.7679, Recall: 0.9773, Specificity: 0.7007, F1-Score: 0.8600 
+23:31:31 : Training Confusion for Epoch 41:
+[[1218   10]
+ [  11 1213]] 
+23:31:32 : Epoch [41/50], Loss: 0.0001, Accuracy: 0.9085, Precision: 0.9500, Recall: 0.8636, Specificity: 0.9539, F1-Score: 0.9048 
+23:31:38 : Training Confusion for Epoch 42:
+[[1220    8]
+ [   6 1218]] 
+23:31:39 : Epoch [42/50], Loss: 0.0003, Accuracy: 0.9297, Precision: 0.9206, Recall: 0.9416, Specificity: 0.9178, F1-Score: 0.9310 
+23:31:46 : Training Confusion for Epoch 43:
+[[1226    2]
+ [   3 1221]] 
+23:31:47 : Epoch [43/50], Loss: 0.0003, Accuracy: 0.9314, Precision: 0.9182, Recall: 0.9481, Specificity: 0.9145, F1-Score: 0.9329 
+23:31:53 : Training Confusion for Epoch 44:
+[[1224    4]
+ [   7 1217]] 
+23:31:54 : Epoch [44/50], Loss: 0.0045, Accuracy: 0.8954, Precision: 0.8466, Recall: 0.9675, Specificity: 0.8224, F1-Score: 0.9030 
+23:32:00 : Training Confusion for Epoch 45:
+[[1224    4]
+ [   6 1218]] 
+23:32:01 : Epoch [45/50], Loss: 0.0011, Accuracy: 0.9167, Precision: 0.9269, Recall: 0.9058, Specificity: 0.9276, F1-Score: 0.9163 
+23:32:07 : Training Confusion for Epoch 46:
+[[1228    0]
+ [   4 1220]] 
+23:32:08 : Epoch [46/50], Loss: 0.0011, Accuracy: 0.9297, Precision: 0.9154, Recall: 0.9481, Specificity: 0.9112, F1-Score: 0.9314 
+23:32:14 : Training Confusion for Epoch 47:
+[[1217   11]
+ [  10 1214]] 
+23:32:15 : Epoch [47/50], Loss: 0.0016, Accuracy: 0.8252, Precision: 0.9467, Recall: 0.6916, Specificity: 0.9605, F1-Score: 0.7992 
+23:32:55 : Training Confusion for Epoch 48:
+[[1219    9]
+ [  10 1214]] 
+23:32:56 : Epoch [48/50], Loss: 0.0005, Accuracy: 0.9052, Precision: 0.9699, Recall: 0.8377, Specificity: 0.9737, F1-Score: 0.8990 
+23:33:02 : Training Confusion for Epoch 49:
+[[1218   10]
+ [   8 1216]] 
+23:33:03 : Epoch [49/50], Loss: 0.0009, Accuracy: 0.8203, Precision: 0.9714, Recall: 0.6623, Specificity: 0.9803, F1-Score: 0.7876 
+23:33:09 : Training Confusion for Epoch 50:
+[[1224    4]
+ [   7 1217]] 
+23:33:10 : Epoch [50/50], Loss: 0.0013, Accuracy: 0.9216, Precision: 0.9012, Recall: 0.9481, Specificity: 0.8947, F1-Score: 0.9241 
+23:33:11 : Cross-validation results: 
+23:33:11 : Accuracy: 0.9032 ± 0.0696 
+23:33:11 : Precision: 0.9267 ± 0.0569 
+23:33:11 : Recall: 0.8858 ± 0.1481 
+23:33:11 : Specificity: 0.9215 ± 0.0865 
+23:33:11 : F1-Score: 0.8942 ± 0.1019 
+23:33:11 : Training Loss: 0.0730 ± 0.0685 
+23:33:11 : Validation Loss: 0.4225 ± 0.4113 
+23:35:11 : ReLUfcon 
+23:35:39 : Loaded saved model. 
+23:36:59 : Test Loss: 0.4751, Test Accuracy: 0.9337, Test Precision: 0.0847, Test Recall: 0.9479, Test Specificity: 0.9336, Test F1-Score: 0.1556 
+00:18:07 : ReLUfcon 
+00:18:33 : Loaded saved model. 
+00:19:53 : Test Loss: 0.5529, Test Accuracy: 0.9156, Test Precision: 0.0681, Test Recall: 0.9531, Test Specificity: 0.9154, Test F1-Score: 0.1271 
