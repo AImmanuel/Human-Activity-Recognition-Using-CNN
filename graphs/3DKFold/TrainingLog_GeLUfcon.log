@@ -1022,3 +1022,6 @@
 00:16:04 : F1-Score: 0.9011 ± 0.0860 
 00:16:04 : Training Loss: 0.0670 ± 0.0666 
 00:16:04 : Validation Loss: 0.4271 ± 0.3604 
+00:29:17 : GeLUfcon 
+00:29:45 : Loaded saved model. 
+00:31:05 : Test Loss: 0.5529, Test Accuracy: 0.9156, Test Precision: 0.0681, Test Recall: 0.9531, Test Specificity: 0.9154, Test F1-Score: 0.1271 
