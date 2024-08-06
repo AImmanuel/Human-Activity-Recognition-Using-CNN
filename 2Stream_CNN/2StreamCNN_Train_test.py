@@ -55,11 +55,11 @@ class TemporalCNN(nn.Module):
         t = self.global_avg_pool(t)
         t = t.view(t.size(0), -1)
         ###
-        #t = F.relu(self.fc1(t))
-        #t = self.dropout1(t)
-        #t = F.relu(self.fc2(t))
-        #t = self.dropout2(t)
-        #t = self.fc3(t)
+        t = F.relu(self.fc1(t))
+        t = self.dropout1(t)
+        t = F.relu(self.fc2(t))
+        t = self.dropout2(t)
+        t = self.fc3(t)
 
         return t
 
@@ -68,7 +68,7 @@ class SpatialCNN(nn.Module):
         super(SpatialCNN, self).__init__()
 
         # Convolutional layers
-        self.conv1_1 = nn.Conv3d(3, 64, (3, 3, 3), padding=1)
+        self.conv1_1 = nn.Conv3d(1, 64, (3, 3, 3), padding=1)
         self.bn1_1 = nn.BatchNorm3d(64)
         self.conv2_1 = nn.Conv3d(64, 128, (3, 3, 3), padding=1)
         self.bn2_1 = nn.BatchNorm3d(128)
@@ -85,7 +85,7 @@ class SpatialCNN(nn.Module):
         self.dropout1_1 = nn.Dropout(0.5)
         self.fc2_1 = nn.Linear(128, 64)
         self.dropout2_1 = nn.Dropout(0.5)
-        self.fc3_1 = nn.Linear(64, 3) 
+        self.fc3_1 = nn.Linear(64, 2)  #(64, 2)
 
     def forward(self, s):
         s = F.relu(self.bn1_1(self.conv1_1(s)))
@@ -109,6 +109,7 @@ class AverageLayer(nn.Module):
     def forward(self, inputs):
         return torch.mean(torch.stack(inputs), dim=0)
 
+
 class SequentialCNN(nn.Module):
     def __init__(self):
         super(SequentialCNN, self).__init__()
@@ -127,7 +128,9 @@ class SequentialCNN(nn.Module):
         #return output
         temporal_output = self.temporal(combined_optical_flow)
         spatial_output = self.spatial(components_stacked)
-        averaged_output = self.average_layer([temporal_output, spatial_output])
+        x = torch.cat((temporal_output,spatial_output), dim=1)
+        #averaged_output = self.average_layer([temporal_output, spatial_output])
+        averaged_output = self.average_layer(x)
         return averaged_output
     
 
