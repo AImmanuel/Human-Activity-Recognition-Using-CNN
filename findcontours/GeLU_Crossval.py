@@ -366,8 +366,8 @@ def logging_output(message, file_path='./def_log.txt'):
         print(f"Error logging to {file_path} : {e}")    
 
 if __name__ == "__main__": 
-    features_path = "C:/Users/ac22aci/Desktop/nparray_balanced"
-    test_path = "C:/Users/ac22aci/Desktop/nparray_uv"
+    features_path = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Balanced/OF"
+    test_path = "C:/Users/ac22aci/Desktop/Exp_6_2_BG+OF_Baseline_80_Split/Unbalanced/OF"
     
     print("Enter experiment name:")
     x = input()
@@ -384,7 +384,7 @@ if __name__ == "__main__":
     
     model = FallDetectionCNN().to(device)
     
-    saved_model_path = 'graphs/3DKFold/Models/best_model_GeLU.pth'
+    saved_model_path = 'graphs/3DKFold/Models/best_model_GeLUnew.pth'
     
     if os.path.isfile(saved_model_path):
         model.load_state_dict(torch.load(saved_model_path, map_location=device))
