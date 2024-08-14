@@ -734,7 +734,7 @@ if __name__ == "__main__":
     
     model = Uniformer().to(device)
     
-    saved_model_path = 'graphs/3DKFold/Models/best_model_num_heads_8.pth'
+    saved_model_path = 'graphs/3DKFold/Models/best_model_Updated_Uniformer_crossval.pth'
     
     if os.path.isfile(saved_model_path):
         model.load_state_dict(torch.load(saved_model_path, map_location=device))
