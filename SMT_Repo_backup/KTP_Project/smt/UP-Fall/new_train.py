@@ -46,6 +46,7 @@ class FallDetectionCNN(nn.Module):
         x = F.relu(self.bn4(self.conv4(x)))
         x = self.global_avg_pool(x)
         x = x.view(x.size(0), -1)
+        
         x = F.relu(self.fc1(x))
         x = self.dropout1(x)
         x = F.relu(self.fc2(x))
