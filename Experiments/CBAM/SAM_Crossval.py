@@ -25,9 +25,6 @@ import csv
 import re
 import traceback
 
-from functools import partial
-from timm.models.layers import trunc_normal_, DropPath, to_2tuple
-
 
 
 # Set seeds for reproducibility
